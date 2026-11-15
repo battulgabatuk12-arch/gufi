@@ -111,11 +111,49 @@ test('the hero captures neutral camps and mines and earns their income', () => {
   hero.x = hero.tx = camp.x; hero.y = hero.ty = camp.y;
   advance(s, 6.1);
   assert.equal(camp.owner, 0);
+  assert.equal(camp.fortLevel, 1);
+  assert.equal(camp.fortHp, 260);
   const mine = s.mines[0]; hero.x = hero.tx = mine.x; hero.y = hero.ty = mine.y;
   advance(s, 4.1);
   assert.equal(mine.owner, 0);
   assert.equal(E.rate(s, 0), 9);
   assert.ok(s.gold[0] >= 180 + 40 + 70 + 55);
+});
+test('owned camps upgrade to stone and enemies cannot buy their fortifications', () => {
+  const s = world(); s.gold[0] = 500;
+  assert.equal(E.command(s, 1, { type: 'fortify', camp: 0 }), false);
+  assert.equal(E.command(s, 0, { type: 'fortify', camp: 0 }), true);
+  assert.equal(s.camps[0].fortLevel, 2); assert.equal(s.camps[0].fortHp, 460); assert.equal(s.gold[0], 340);
+  assert.equal(E.command(s, 0, { type: 'fortify', camp: 0 }), false);
+  s.camps[0].fortHp = 0;
+  assert.equal(E.command(s, 0, { type: 'fortify', camp: 0 }), true);
+  assert.equal(s.camps[0].fortLevel, 1); assert.equal(s.gold[0], 240);
+});
+test('repairs restore health only when enemies are clear and a cooldown applies', () => {
+  const s = world(), camp = s.camps[0]; camp.fortHp = 100;
+  const enemy = E.create().units.find(u => u.owner === 1); enemy.id = ++s.uid; enemy.x = camp.x + 100; enemy.y = camp.y; s.units.push(enemy);
+  assert.equal(E.command(s, 0, { type: 'repair', camp: 0 }), false);
+  s.units.pop(); assert.equal(E.command(s, 0, { type: 'repair', camp: 0 }), true);
+  assert.equal(camp.fortHp, 260); assert.equal(s.gold[0], 140);
+  camp.fortHp = 100; assert.equal(E.command(s, 0, { type: 'repair', camp: 0 }), false);
+});
+test('a camp cannot be occupied until its perimeter is breached', () => {
+  const s = world(), camp = s.camps[1], hero = s.units[0];
+  hero.x = hero.tx = camp.x; hero.y = hero.ty = camp.y + 85; camp.fortHp = 48;
+  advance(s, .5, { dx: 0, dy: -1 });
+  assert.equal(camp.owner, 1); assert.equal(camp.capture, 0); assert.ok(camp.fortHp < 48);
+  assert.ok(Math.hypot((hero.x-camp.x)/104,(hero.y-camp.y)/74) >= 1.07);
+  for (let i = 0; i < 300 && camp.fortHp > 0; i++) advance(s, 1/60, { dx: 0, dy: -1 });
+  assert.equal(camp.fortHp, 0);
+  E.command(s, 0, { type: 'heroControl', active: false, dx: 0, dy: 0 });
+  E.command(s, 0, { type: 'move', ids: [hero.id], x: camp.x, y: camp.y, camp: camp.id }); advance(s, 8);
+  assert.equal(camp.owner, 0); assert.equal(camp.fortHp, 260);
+});
+test('ranking tiers and RP depend on the simulated result', () => {
+  const s = world(); s.phase = 'ended'; s.winner = 0; s.kills[0] = 5; s.fortsBuilt[0] = 2;
+  assert.equal(E.rankPoints(s, 0).rp, 202);
+  assert.equal(E.rankTier(249).name, 'Шинэ дайчин'); assert.equal(E.rankTier(250).name, 'Хүрэл');
+  assert.equal(E.rankTier(6000).name, 'Их хаан'); assert.equal(E.rankTier(6000).next, null);
 });
 test('save roundtrips preserve hero state; 3.2 saves acquire safe defaults', () => {
   const s = world();

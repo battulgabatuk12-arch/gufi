@@ -40,7 +40,7 @@ class Node {
   closest(s) { let n = this; while (n) { if (n.matches(s)) return n; n = n.parentElement; } return null; }
   addEventListener(name, fn) { if (!this.listeners.has(name)) this.listeners.set(name, []); this.listeners.get(name).push(fn); }
   dispatch(name, fields = {}) { const e = { target: this, preventDefault() {}, ...fields }; for (const fn of this.listeners.get(name) || []) fn(e); }
-  click() { if (!this.disabled && this.onclick) this.onclick({ target: this }); }
+  click() { if (!this.disabled && this.onclick) return this.onclick({ target: this }); }
   focus() {}
   setPointerCapture() {}
   showModal() { this.open = true; this.attrs.open = ''; }
@@ -93,12 +93,13 @@ class Broker {
     };
   }
 }
-function app({ width = 1440, height = 900, search = '', saved, broker = new Broker() } = {}) {
+function app({ width = 1440, height = 900, search = '', saved, broker = new Broker(), fetchImpl } = {}) {
   const document = documentFromHtml(width, height), listeners = new Map(), storage = new Map(saved || []);
   let now = 0, raf = null;
   const sandbox = {
     document, console, crypto: webcrypto, TextEncoder, TextDecoder, URL, URLSearchParams, WebSocket: broker.webSocketClass(),
-    performance: { now: () => now }, location: { search, href: 'https://game.test/' + search },
+    performance: { now: () => now }, location: { search, href: 'https://game.test/' + search, protocol: 'https:' },
+    fetch: fetchImpl || (async () => ({ ok: false, json: async () => ({ error: 'offline test' }) })),
     navigator: { clipboard: { writeText: async () => {} } }, devicePixelRatio: 1,
     matchMedia: () => ({ matches: width <= 760 }), ResizeObserver: class { observe() {} },
     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, String(v)), removeItem: k => storage.delete(k) },

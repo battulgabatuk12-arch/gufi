@@ -48,9 +48,9 @@ test('tab visibility saves and pauses solo play without stale movement', () => {
 });
 test('host and guest exchange room, hero controls, escort, and dash packets', () => {
   const broker = new Broker(), host = app({ broker }), guest = app({ broker });
-  host.click('onlineTab'); host.click('createRoom'); broker.flush();
+  host.click('friendLaunch'); host.click('createRoom'); broker.flush();
   const code = host.document.getElementById('roomCode').textContent; assert.match(code, /^\d{6}$/);
-  guest.click('onlineTab'); guest.document.getElementById('roomCodeInput').value = code; guest.click('joinRoom'); broker.flush();
+  guest.click('friendLaunch'); guest.document.getElementById('roomCodeInput').value = code; guest.click('joinRoom'); broker.flush();
   assert.equal(host.document.getElementById('launchOnline').disabled, false);
   host.click('launchOnline'); broker.flush();
   assert.equal(guest.steppe.role, 'guest'); assert.equal(guest.steppe.mine, 1); assert.equal(guest.steppe.heroMode, true);
@@ -63,4 +63,29 @@ test('host and guest exchange room, hero controls, escort, and dash packets', ()
   assert.ok(hero.x > x + 15);
   guest.click('heroDash'); broker.flush(); assert.ok(host.steppe.state.heroControls[1].dashReady > 0);
   guest.click('heroEscort'); broker.flush(); assert.equal(host.steppe.state.heroControls[1].follow, false);
+});
+test('the new lobby launches play and the fortification button upgrades an owned camp', () => {
+  const a = app({ width: 390, height: 844 });
+  assert.equal(a.document.getElementById('launchpad').hidden, false);
+  a.click('startShortcut'); assert.equal(a.document.getElementById('launchpad').hidden, true);
+  assert.equal(a.document.getElementById('fortTools').hidden, false);
+  a.click('fortify'); assert.equal(a.steppe.state.camps[0].fortLevel, 2);
+  assert.equal(a.steppe.state.camps[0].fortHp, 460);
+  a.click('newGame'); assert.equal(a.document.getElementById('launchpad').hidden, false);
+});
+test('ranked play uses fixed steps and exact save/resume positions reproduce the command log', async () => {
+  const ticket = { id: '0bd2bfe3-78e0-4071-b8bd-c796e7a606af', token: 'a'.repeat(64), seed: 93472, difficulty: 'normal', version: '4.0' };
+  const fetchImpl = async () => ({ ok: true, json: async () => ticket });
+  const a = app({ fetchImpl }); a.document.getElementById('playerNickname').value = 'Туршилтын баатар'; await a.click('rankedStart');
+  assert.equal(a.steppe.ranked, true); assert.equal(a.steppe.speed, 1);
+  a.fire('keydown', { key: 'd' }); a.frames(23); a.fire('keyup', { key: 'd' }); a.frame(); a.fire('beforeunload');
+  const b = app({ fetchImpl, saved: a.storage }); b.click('homeResume');
+  b.fire('keydown', { key: 'w' }); b.frames(19); b.fire('keyup', { key: 'w' }); b.frame();
+  const E = require('../lib/engine.cjs'), expected = E.create([0], {}, { seed: ticket.seed, difficulty: ticket.difficulty }); expected.phase = 'playing';
+  const commands = b.steppe.replay; let cursor = 0;
+  for (let frame = 0; frame <= b.steppe.simFrame; frame++) {
+    while (cursor < commands.length && commands[cursor].frame === frame) assert.equal(E.command(expected, 0, commands[cursor++].cmd), true);
+    if (frame < b.steppe.simFrame) E.tick(expected, 1/30);
+  }
+  assert.deepEqual(JSON.parse(JSON.stringify(b.context.SteppeEngine.snapshot(b.steppe.state))), JSON.parse(JSON.stringify(E.snapshot(expected))));
 });

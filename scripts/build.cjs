@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+const engine = scripts.find(s => s.includes('// Authoritative,'));
+if (!engine || !engine.includes('globalThis.SteppeEngine=')) throw Error('Game engine not found');
+fs.mkdirSync(path.join(root, 'lib'), { recursive: true });
+fs.writeFileSync(path.join(root, 'lib', 'engine.cjs'), '// Generated from index.html by scripts/build.cjs.\n' + engine.replace('globalThis.SteppeEngine=', 'module.exports='));
+const output = path.join(root, 'public');
+fs.mkdirSync(output, { recursive: true });
+for (const file of ['index.html', 'manifest.webmanifest', 'sw.js']) fs.copyFileSync(path.join(root, file), path.join(output, file));
+fs.cpSync(path.join(root, 'icons'), path.join(output, 'icons'), { recursive: true });
+console.log('Built app shell, offline assets, and shared ranking engine.');
