@@ -93,8 +93,9 @@ class Broker {
     };
   }
 }
-function app({ width = 1440, height = 900, search = '', saved, broker = new Broker(), fetchImpl } = {}) {
+function app({ width = 1440, height = 900, search = '', saved, broker = new Broker(), fetchImpl, tutorialSeen = true } = {}) {
   const document = documentFromHtml(width, height), listeners = new Map(), storage = new Map(saved || []);
+  if (tutorialSeen) storage.set('mongol-baatruud-guide-v1', '1');
   let now = 0, raf = null;
   const sandbox = {
     document, console, crypto: webcrypto, TextEncoder, TextDecoder, URL, URLSearchParams, WebSocket: broker.webSocketClass(),

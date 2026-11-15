@@ -89,3 +89,40 @@ test('ranked play uses fixed steps and exact save/resume positions reproduce the
   }
   assert.deepEqual(JSON.parse(JSON.stringify(b.context.SteppeEngine.snapshot(b.steppe.state))), JSON.parse(JSON.stringify(E.snapshot(expected))));
 });
+test('a new player receives short instructions before the simulation starts', () => {
+  const a = app({ tutorialSeen: false }); a.click('startShortcut');
+  assert.equal(a.document.getElementById('introDialog').open, true);
+  a.frames(20); assert.equal(a.steppe.state.phase, 'ready'); assert.equal(a.steppe.state.time, 0);
+  a.click('closeIntro'); assert.equal(a.steppe.state.phase, 'ready');
+  a.click('learnPlay'); a.click('skipIntro');
+  assert.equal(a.document.getElementById('introDialog').open, false);
+  assert.equal(a.steppe.state.phase, 'playing'); assert.equal(a.steppe.guide.active, false);
+  assert.equal(a.storage.get('mongol-baatruud-guide-v1'), '1');
+});
+test('the guided first camp is really captured and fortified, then manual control resumes', () => {
+  const a = app({ width: 390, height: 844, tutorialSeen: false });
+  a.click('startShortcut'); a.click('startGuided');
+  assert.equal(a.steppe.difficulty, 'easy'); assert.equal(a.steppe.guide.active, true);
+  assert.equal(a.document.getElementById('coachCard').hidden, false);
+  const id = a.steppe.guide.target; assert.equal(a.steppe.state.camps[id].owner, -1);
+  assert.equal(a.steppe.renderer.guideTarget.x, a.steppe.state.camps[id].x);
+  // The harness canvas is already a no-op. Avoid replaying thousands of draw calls
+  // while exercising the real command, combat, capture, and coaching state path.
+  a.steppe.renderer.render = () => {};
+  a.click('coachAction'); assert.equal(a.steppe.heroMode, false);
+  for (let i = 0; i < 4000 && a.steppe.guide.stage === 0; i++) a.frame();
+  assert.equal(a.steppe.state.camps[id].owner, 0); assert.equal(a.steppe.guide.stage, 1);
+  a.click('coachAction'); assert.equal(a.steppe.state.camps[id].fortLevel, 2);
+  assert.equal(a.steppe.guide.stage, 2);
+  a.click('coachAction'); assert.equal(a.steppe.guide.active, false);
+  assert.equal(a.steppe.heroMode, true); assert.equal(a.document.getElementById('coachCard').hidden, true);
+  assert.notEqual(a.steppe.nextCamp, id);
+});
+test('the next-camp action works outside the guide and honours pause', () => {
+  const a = app(); a.click('startShortcut'); const id = a.steppe.nextCamp;
+  assert.ok(id >= 0); a.click('pause'); assert.equal(a.document.getElementById('nextCamp').disabled, true);
+  a.click('unpause'); a.click('nextCamp');
+  assert.equal(a.steppe.heroMode, false);
+  assert.ok(a.steppe.state.units.some(u => u.owner === 0 && u.goal === id));
+  assert.ok(a.document.getElementById('nextCampName').textContent.includes(a.steppe.state.camps[id].name));
+});

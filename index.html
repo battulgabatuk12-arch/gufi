@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#182b2b">
 <meta name="description" content="Монгол баатрууд — Талын эзэд. Морьт цэргээ удирдаж, гэр баазыг эзлэн, тал нутгаа нэгтгэ. Боттой эсвэл найзуудтайгаа тогло.">
-<title>Монгол баатрууд 4.0 — Талын эзэд</title>
+<title>Монгол баатрууд 4.1 — Талын эзэд</title>
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,6 +55,11 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
 @media(max-height:600px) and (min-width:761px){.launch-content{margin-top:20px}.launch-copy h2{font-size:45px}.launch-art{min-height:300px}.launch-art canvas{height:290px;width:290px}.launch-art:before{width:230px;height:230px}.launch-features{margin-top:20px}.fort-tools{bottom:115px}}
 @media(prefers-reduced-motion:reduce){.launchpad *{animation:none!important;transition:none!important}}
 @media(max-width:760px){input,.player-field input{font-size:16px}.hero-buttons button{min-height:44px}.hero-pad{grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px)}}
+/* 4.1: clear first steps, contextual objectives, and readable controls. */
+.learn-button{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#ead096;border-bottom:1px solid #d1b57670;padding:9px 0;margin:0 0 8px;min-height:40px}.learn-button:hover{color:#fff1c7}.launch-actions #startShortcut span{font-size:10px;opacity:.72}.flag-editor>summary{cursor:pointer;font-size:11px;color:#d3c490;min-height:34px;padding:7px 0;list-style:disclosure-closed}.flag-editor[open]>summary{list-style:disclosure-open;margin-bottom:13px}.flag-editor:not([open]){padding:7px 0;border:0;background:none}.objective{pointer-events:auto;width:238px}.objective .eyebrow{font-size:9px}.objective p{font-size:11px}.objective b{font-size:30px}.next-camp{margin-top:12px;border-top:1px solid #e1c57d25;padding-top:12px}.next-camp strong{display:block;font-size:11px;color:#f2dfa6;line-height:1.5}.next-camp small{display:block;font-size:10px;line-height:1.7;color:#a9c0ae;margin:5px 0 9px}.next-camp button{width:100%;min-height:42px;background:#d9bc78;color:#172f31;border:1px solid #f1d48c;border-radius:5px;font-size:11px;font-weight:700}.map-tools{top:280px}.coach-card{position:absolute;z-index:5;top:278px;left:26px;width:270px;border:1px solid #e5c581aa;border-radius:8px;padding:15px;background:#132e31f5;box-shadow:0 8px 25px #0c252e55}.coach-top{display:flex;justify-content:space-between;align-items:center;color:#e6ca87;font-size:9px;letter-spacing:.7px}.coach-top button{font-size:10px;color:#90ada7;padding:5px;min-height:28px}.coach-card h3{font-size:17px;line-height:1.4;color:#f1e2b5;margin:9px 0}.coach-card p{font-size:11px;line-height:1.8;color:#b0c8b5;margin:0 0 12px}.coach-card .primary{justify-content:center;min-height:44px;padding:10px;font-size:11px;text-align:center;line-height:1.6}.coach-track{height:3px;background:#36514a;margin-top:13px;border-radius:3px}.coach-track i{display:block;height:100%;background:#dfc17c;width:33%}.battlefield.guiding #fortTools{display:none}.battlefield.guiding #nextCamp{display:none}.beginner-dialog{max-width:550px}.beginner-dialog h2{font-size:35px;margin:15px 0}.beginner-dialog .intro-lead{font-size:13px;line-height:1.8;color:#b9ccba}.learn-steps{list-style:none!important;padding:0!important;margin:22px 0!important;display:grid;gap:12px}.learn-steps li{display:flex;gap:13px;padding:12px 0!important;margin:0!important;border-bottom:1px solid #bca66e25}.learn-steps .step-number{display:grid;place-items:center;width:29px;height:29px;flex-shrink:0;border-radius:50%;border:1px solid #d7ba7d65;color:#e8ca88;font-size:12px}.learn-steps b{display:block;font-size:14px;color:#f0e2be;margin-bottom:5px}.learn-steps p{font-size:12px;line-height:1.8;color:#a7c1ad;margin:0}.beginner-dialog .primary{justify-content:center;min-height:49px;font-size:13px}.beginner-dialog .text-button{width:100%;text-align:center;min-height:42px;font-size:11px}.help-more{font-size:12px;line-height:1.8;color:#a8c1b0;margin:19px 0}.help-more summary{color:#e1c48a;cursor:pointer;min-height:38px}.help-more .help-controls{font-size:11px}.quickbar button small{font-size:9px!important;letter-spacing:0}.hero-buttons button{font-size:11px;min-height:44px}.hero-buttons button small{font-size:9px}.hero-hud p{font-size:10px}.hero-health{font-size:10px}.escort-button{font-size:11px}.sidebar .section-title{font-size:10px}.sidebar .recruit b{font-size:12px}.sidebar .recruit small{font-size:10px}.sidebar .recruit em{font-size:10px}.sidebar .secondary{font-size:11px}.sidebar .upgrade{font-size:11px}.sidebar .upgrade small{font-size:10px}.hero-pad .pad-center{font-size:11px;font-weight:bold;color:#f3dfa4}.control-legend{font-size:10px;color:#9db5a7;line-height:1.9;margin:13px 0 0}.control-legend b{color:#ead09a;font-weight:500}
+@media(max-width:1100px){.objective{width:205px}.coach-card{left:20px;width:252px}}
+@media(max-width:760px){.objective{top:12px;left:12px;right:12px;width:auto;padding:10px 12px;display:grid;grid-template-columns:1fr 1.5fr;gap:0 15px}.objective>.eyebrow{grid-column:1;font-size:8px}.objective>div:not(.next-camp){grid-column:1;gap:8px}.objective p{font-size:9px;line-height:1.5;margin:3px 0}.objective b{font-size:26px;margin-top:5px}.objective .objective-track{grid-column:1;margin:4px 0 0}.objective .next-camp{grid-column:2;grid-row:1/5;border:0;padding:0;margin:0}.next-camp strong{font-size:10px}.next-camp small{font-size:9px;line-height:1.5;margin:3px 0 6px}.next-camp button{min-height:38px;font-size:10px}.battlefield .map-heading{display:none}.hero-hud{top:148px;left:12px;width:calc(100% - 24px);max-width:360px}.hero-hud p{font-size:10px;margin-top:6px}.hero-buttons button{font-size:11px}.hero-buttons button small{font-size:9px}.hero-health{font-size:10px}.hero-hud .escort-button{font-size:10px;margin-top:5px;min-height:32px}.map-tools{right:12px;top:310px}.coach-card{top:auto;bottom:calc(74px + env(safe-area-inset-bottom));left:164px;width:calc(100% - 176px);padding:11px}.coach-card h3{font-size:14px;margin:7px 0}.coach-card p{font-size:10px;line-height:1.7;margin-bottom:9px}.coach-top{font-size:8px;letter-spacing:0}.coach-top button{font-size:9px;padding:4px}.coach-card .primary{font-size:10px;padding:7px;min-height:42px}.coach-track{margin-top:9px}.quickbar button small{font-size:8px!important}.beginner-dialog{padding:25px 20px}.beginner-dialog h2{font-size:29px}.beginner-dialog .intro-lead{font-size:12px}.learn-steps{gap:8px!important;margin:16px 0!important}.learn-steps b{font-size:13px}.learn-steps p{font-size:11px}.learn-steps li{gap:10px}.learn-button{font-size:12px;margin-bottom:6px}.sidebar .flag-editor{padding:7px}.minimap-wrap{display:none}.hero-pad{bottom:calc(83px + env(safe-area-inset-bottom))}}
+@media(max-height:600px) and (min-width:761px){.coach-card{top:14px;left:305px;width:255px}.battlefield.guiding .objective{display:none}.hero-hud{top:12px}}
 </style>
 </head>
 <body>
@@ -76,7 +81,7 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
 <header class="topbar">
  <button class="mobile-menu icon-button" id="menuToggle" aria-label="Цэргийн самбар"><svg><use href="#i-menu"/></svg></button>
  <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 30 40"><path d="M15 3v33M5 10h20M9 16v12l6 6 6-6V16M10 5l5-3 5 3M11 22h8"/></svg></span><div>МОНГОЛ БААТРУУД<small>Т А Л Ы Н &nbsp; Э З Э Д</small></div></div>
- <span class="edition">ТАЛЫН ЭЗЭД <i>4.0</i></span>
+ <span class="edition">ТАЛЫН ЭЗЭД <i>4.1</i></span>
  <div class="resources" aria-live="polite"><div class="mine-counter" title="Эзэлсэн алтны уурхай"><span style="font-size:18px">⛏</span><b id="minesOwned">0 / 5</b><small>УУРХАЙ</small></div>
   <div><svg class="gold"><use href="#i-coin"/></svg><b id="gold">180</b><small id="income">+3/с</small></div>
   <div><svg><use href="#i-horse"/></svg><b id="armyCount">10</b><small>/ 60</small></div>
@@ -88,22 +93,23 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
  <nav class="launch-nav"><div class="launch-logo"><span>ᠮ</span><div>МОНГОЛ БААТРУУД<small>Т А Л Ы Н &nbsp; Э З Э Д</small></div></div><div><button data-open-rank>♜ Эрэмбэ</button><button data-install>↓ Суулгах</button></div></nav>
  <div class="launch-content"><div class="launch-copy"><div class="season-tag"><i></i> I УЛИРАЛ · ОРХОНЫ ХӨНДИЙ</div><h2>ТАЛ НУТГАА<br><em>ЭЗЭМД.</em></h2><p class="intro">Өөрийн баатраа удирд. Эзэмшлээ хэрэмлэ.<br>Нэг сүлдийн дор найзуудтайгаа хүчээ сорь.</p>
   <label class="player-field" for="playerNickname"><span>БААТРЫН ХОЧ</span><input id="playerNickname" maxlength="18" placeholder="Таны хоч" autocomplete="nickname"></label>
-  <div class="launch-actions"><button id="startShortcut" aria-label="Монгол баатрууд тоглоомыг шууд эхлүүлэх">▶ АЯНД МОРДОХ <span>ГАНЦААРАА · ДАСГАЛ</span></button><button id="rankedStart">♜ ЭРЭМБЭТЭЙ АЯН</button><button id="friendLaunch">⚑ НАЙЗУУДТАЙГАА</button><button id="homeResume" hidden>Хадгалсан аянаа үргэлжлүүлэх →</button></div>
+  <button id="learnPlay" class="learn-button">? Яаж тоглох вэ?</button>
+  <div class="launch-actions"><button id="startShortcut" aria-label="Тоглож эхлэх">▶ ТОГЛОЖ ЭХЛЭХ <span>ГАНЦААРАА · ДАСГАЛ</span></button><button id="rankedStart">♜ ЭРЭМБЭТЭЙ АЯН</button><button id="friendLaunch">⚑ НАЙЗУУДТАЙГАА</button><button id="homeResume" hidden>Хадгалсан аянаа үргэлжлүүлэх →</button></div>
   <p id="rankStatus" role="status"></p><p class="launch-note">WASD / сум — хөдөлгөх · Space — хурдлах · B — хашаа<br>Эрэмбэтэй аяны хоч, оноо нийтэд харагдана. Интернэт шаардлагатай.</p>
   <div class="skin-choice" role="group" aria-label="Баатрын хуягны өнгө"><span>СҮЛДИЙН ӨНГӨ</span><button data-skin="sky" aria-pressed="true" aria-label="Хөх хуяг"></button><button data-skin="gold" aria-pressed="false" aria-label="Алтан хуяг"></button><button data-skin="ruby" aria-pressed="false" aria-label="Улаан хуяг"></button></div>
  </div><div class="launch-art"><canvas id="menuHero" width="720" height="720" aria-label="Нарийвчилсан хуягтай Монгол морьт баатар"></canvas><div class="hero-caption"><strong>ХӨХ МОНГОЛ</strong><span>ТАЛ НУТГИЙН ШИНЭ АЯН</span></div></div></div>
  <div class="launch-features"><div><i>◆</i><div><b>ӨӨРИЙН БААТАР</b><p>Нарийвчилсан хуяг, морь, зэвсэг.<br>Чиглүүл. Дайр. Хурдал.</p></div></div><div><i>♜</i><div><b>ЭЗЭМШЛЭЭ ХАМГААЛ</b><p>Модон хашаа, чулуун хэрэм.<br>Эзэл. Бэхэл. Зас.</p></div></div><div><i>⚑</i><div><b>ЗЭРЭГЛЭЛЭЭ АХИУЛ</b><p>Шинэ дайчнаас Их хаан хүртэл.<br>Аян бүр шинэ түүх.</p></div></div></div>
- <footer class="launch-footer"><span>4.0 · FORTRESS SEASON</span><span>iPHONE · ANDROID · PC</span></footer>
+ <footer class="launch-footer"><span>4.1 · ТОГЛОЖ СУРАХ АЯН</span><span>iPHONE · ANDROID · PC</span></footer>
 </section>
 <div class="workspace">
  <aside class="sidebar" id="sidebar">
   <div class="sidebar-heading"><span class="eyebrow">ТАНЫ ОВОГ</span><span class="live-label" id="modeLabel"><i></i> БОТТОЙ ТОГЛОЛТ</span></div>
   <div class="clan-title"><span class="clan-symbol">ᠮ</span><div><h1>Хөх сүлд</h1><p>Тэнгэр ивээж, сүлд өршөөг.</p></div></div>
-  <section class="flag-editor" aria-label="Өөрийн улс далбаа тохируулах">
+  <details class="flag-editor" aria-label="Өөрийн улс далбаа тохируулах"><summary>Овог, далбаагаа өөрчлөх</summary>
    <div class="section-title"><span>ӨӨРИЙН УЛС, ДАЛБАА</span><small>БОЛОВСРУУЛАХ</small></div>
    <div class="flag-editor-main"><canvas id="flagPreview" width="160" height="104" aria-label="Миний далбааны зураг"></canvas><div><label for="countryName">Улс / овгийн нэр</label><input id="countryName" maxlength="18" value="Хөх Монгол" placeholder="Улсын нэр"><label for="flagSymbol">Сүлд</label><select id="flagSymbol"><option value="soyombo">☀ Соёмбо</option><option value="wolf">🐺 Чоно</option><option value="horse">♞ Морь</option><option value="sun">☀ Нар</option><option value="star">★ Од</option></select></div></div>
    <div class="flag-edit-actions"><label>Үндсэн өнгө <input id="flagPrimary" type="color" value="#c62639"></label><label>Хослох өнгө <input id="flagAccent" type="color" value="#246bc2"></label><button class="secondary" id="saveFlag">Далбаа хадгалах ⚑</button></div>
-  </section>
+  </details>
   <section class="start-panel" id="startPanel">
    <div class="mode-tabs" role="tablist" aria-label="Тоглох горим"><button id="soloTab" role="tab" aria-selected="true">Ганцаараа</button><button id="onlineTab" role="tab" aria-selected="false">Найзуудтайгаа</button></div>
    <div id="soloMenu"><div class="difficulty"><span>БОТЫН ТҮВШИН</span><div role="group" aria-label="Ботын түвшин"><button class="diff" data-diff="easy" aria-pressed="false">Хялбар</button><button class="diff" data-diff="normal" aria-pressed="true">Дундаж</button><button class="diff" data-diff="hard" aria-pressed="false">Хэцүү</button></div></div><p class="small-note">3 өрсөлдөгч овогтой тулалдана.<br>13 баазаас 8-ыг эзэлж тал нутгаа нэгтгэ.</p><button class="primary" id="start">Аянд мордох <span>↗</span></button><button class="text-button" id="resume" hidden>Хадгалсан тоглолтоо үргэлжлүүлэх →</button></div>
@@ -126,12 +132,12 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
    <div class="mission" id="mission"><span class="eyebrow">АЯНЫ ДААЛГАВАР</span><p id="missionText">2 бааз эзэл · +70 алт</p><div class="objective-track"><i id="missionFill"></i></div></div>
   </section>
   <section class="mining-guide"><b>⛏ АЛТНЫ УУРХАЙ</b><p>Таван уурхай дээр цэргүүдээ хүргэ. 4 секунд эзэмшээд <strong>+55 алт</strong>, дараа нь <strong>+4 алт/секунд</strong> авна.</p></section><section class="standings"><div class="section-title"><span>ТАЛ НУТГИЙН ХҮЧНИЙ ХАРЬЦАА</span><span>БААЗ</span></div><div id="standings"></div></section>
-  <div class="sidebar-bottom"><div class="tiny-ornament">◇ ─── ◇ ─── ◇</div><span>МОНГОЛ БААТРУУД 4.0</span><button id="newGame" class="text-button" hidden>Шинэ тоглолт</button><p>Монгол ахуйгаас сэдэвлэсэн тоглоом</p></div>
+  <div class="sidebar-bottom"><div class="tiny-ornament">◇ ─── ◇ ─── ◇</div><span>МОНГОЛ БААТРУУД 4.1</span><button id="newGame" class="text-button" hidden>Шинэ тоглолт</button><p>Монгол ахуйгаас сэдэвлэсэн тоглоом</p></div>
  </aside>
  <main class="battlefield" id="battlefield">
   <canvas id="map" tabindex="0" aria-label="Тал нутгийн газрын зураг. Өөрийн цэргийг сонгоод очих газар товш. H дарж горим солино. Баатрын горимд WASD эсвэл сумтай товчоор баатраа хөдөлгөнө."></canvas>
   <div class="map-heading"><span class="compass">N<span>↑</span></span><div><span class="eyebrow">ОРХОНЫ ХӨНДИЙ</span><span class="map-subtitle">Их аян эхлэхэд бэлэн.</span></div></div>
-  <div class="objective"><span class="eyebrow">АЯНЫ ЗОРИЛГО</span><div><b id="objectiveCount">1 <span>/ 8</span></b><p>Гэр баазыг эзэлж<br>тал нутгаа нэгтгэ.</p></div><div class="objective-track"><i id="objectiveFill"></i></div></div>
+  <section class="objective" aria-label="Зорилго ба дараагийн алхам"><span class="eyebrow">8 БААЗ ЭЗЭЛБЭЛ ЯЛНА</span><div><b id="objectiveCount">1 <span>/ 8</span></b><p>Чиний эзэлсэн<br>баазын тоо</p></div><div class="objective-track"><i id="objectiveFill"></i></div><div class="next-camp"><strong id="nextCampName">Эхний баазаа эзэлье</strong><small id="nextCampStatus">Аянд мордсоны дараа дараагийн бай харагдана.</small><button id="nextCamp" disabled>Цэргээ явуулах →</button></div></section>
   <div class="map-tools"><button id="zoomIn" aria-label="Газрын зураг ойртуулах">+</button><span id="zoomValue">85%</span><button id="zoomOut" aria-label="Газрын зураг холдуулах">−</button><button id="center" title="Цэрэг дээр төвлөрөх (Space)" aria-label="Цэрэг дээр төвлөрөх"><svg><use href="#i-cross"/></svg></button><button id="fullscreen" title="Бүтэн дэлгэц" aria-label="Бүтэн дэлгэц"><svg><use href="#i-expand"/></svg></button></div>
   <div id="tutorial" class="tutorial"><span class="tutorial-number">01</span><div><b>Тушаалаа өг, баатар аа.</b><p>Цэргүүдээ сонгоод очих газар товш.<br>Саарал гэр бааз руу очвол эзэлж авна.</p></div><button id="dismissTutorial" aria-label="Заавар хаах">×</button></div>
   <div class="toast" id="toast" role="status" hidden></div>
@@ -142,26 +148,28 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
    <p id="heroHint">WASD / сум · хөдөлгөх. Ойртсон дайснаа автоматаар цохино.</p>
   </section>
   <div class="hero-pad" id="heroPad" hidden role="group" aria-label="Баатрыг дөрвөн чиглэлд хөдөлгөх">
-   <button data-dir="up" aria-label="Баатрыг дээш хөдөлгөх">▲</button><button data-dir="left" aria-label="Баатрыг зүүн тийш хөдөлгөх">◀</button><span class="pad-center" aria-hidden="true">◆</span><button data-dir="right" aria-label="Баатрыг баруун тийш хөдөлгөх">▶</button><button data-dir="down" aria-label="Баатрыг доош хөдөлгөх">▼</button>
+   <button data-dir="up" aria-label="Баатрыг дээш хөдөлгөх">▲</button><button data-dir="left" aria-label="Баатрыг зүүн тийш хөдөлгөх">◀</button><span class="pad-center" aria-hidden="true">ХӨДӨЛ</span><button data-dir="right" aria-label="Баатрыг баруун тийш хөдөлгөх">▶</button><button data-dir="down" aria-label="Баатрыг доош хөдөлгөх">▼</button>
   </div>
   <div id="selectionBadge" class="selection-badge" hidden><span class="selection-dot"></span><b>10</b> цэрэг сонгосон <span>·</span> Газрын зураг дээр тушаал өг</div>
   <div id="targetHint" class="target-hint" hidden>🏹 СУМАН БОРОО · Газрын зурагт товшиж харва <button id="cancelTarget">БОЛИХ ×</button></div>
   <div id="quickbar" class="quickbar" hidden aria-label="Хурдан тушаал">
-   <button data-group="all" title="Бүх цэрэг (1)"><span>⚑</span><small>БҮГД</small></button>
-   <button data-group="cavalry" title="Морьт цэрэг (2)"><span>♞</span><small>МОРЬТ</small></button>
-   <button data-group="archer" title="Морьт харваач (3)"><span>🏹</span><small>ХАРВААЧ</small></button>
-   <button data-group="hero" title="Сүлд баатар (4)"><span>◆</span><small>СҮЛД</small></button>
+   <button data-group="all" title="Бүх цэрэг (1)"><span>⚑</span><small>Бүх цэрэг</small></button>
+   <button data-group="cavalry" title="Морьт цэрэг (2)"><span>♞</span><small>Морьт</small></button>
+   <button data-group="archer" title="Морьт харваач (3)"><span>🏹</span><small>Харваач</small></button>
+   <button data-group="hero" title="Сүлд баатар (4)"><span>◆</span><small>Баатар</small></button>
    <button data-skill="rally" title="Дайны уухай (5)"><span>📯</span><small data-skill-time="rally">УУХАЙ</small></button>
    <button data-skill="volley" title="Суман бороо (6)"><span>🎯</span><small data-skill-time="volley">СУМАН</small></button>
    <button id="speed" title="Ганцаарчилсан тоглолтын хурд"><span>⏩</span><small>1×</small></button>
   </div>
+  <section id="coachCard" class="coach-card" hidden aria-label="Алхамчилсан тоглох заавар"><div class="coach-top"><span id="coachStep">АЛХАМ 1 / 3</span><button id="coachSkip">Алгасах</button></div><h3 id="coachTitle">Эхний баазаа эзэл</h3><p id="coachText">Шар цагирагтай гэр лүү цэргүүдээ явуулаарай.</p><button id="coachAction" class="primary">Цэргээ явуулах →</button><div class="coach-track"><i id="coachProgress"></i></div></section>
   <div id="fortTools" class="fort-tools" hidden aria-label="Эзэмшлийн хамгаалалт"><div><b id="fortName">Эзэмшлийн хашаа</b><small id="fortHp">Баазаа сонгоорой</small></div><button id="fortify">♜ Бэхлэх</button><button id="repairFort">Засах · 40</button></div>
   <div class="minimap-wrap"><div><span>ТАЛ НУТГИЙН ЗУРАГ</span><small>ТОВШИЖ ШИЛЖИХ</small></div><canvas id="minimap" width="210" height="140" aria-label="Бяцхан газрын зураг"></canvas></div>
   <div class="map-footer"><span><i></i><b id="eventText">Хөх сүлдийн аян Орхоны хөндийгөөс эхэлнэ.</b></span><small>БАРУУН ЧИРЭХ · ШИЛЖИХ <span> / </span> ЗҮҮН ЧИРЭХ · СОНГОХ</small></div>
   <div class="pause-screen" id="pauseScreen" hidden><span class="eyebrow">ТАЛ ТҮР АМГАЛАН</span><h2>Тоглолт түр зогслоо</h2><button class="primary" id="unpause">Үргэлжлүүлэх →</button></div>
  </main>
 </div>
-<dialog id="helpDialog"><button class="dialog-close" data-close aria-label="Хаах">×</button><span class="eyebrow">АЯНЫ ЗААВАР</span><h2>Талаа нэгтгэ.<br><em>Сүлдээ мандуул.</em></h2><ol><li><b>Цэргээ сонго.</b> Нэг цэрэг дээр товш, эсвэл «Бүх цэрэг» / 1 дар. Компьютерт зүүн товчоор чирж олон цэрэг сонгоно. Баруун товчоор чирж газрын зураг хөдөлгөнө.</li><li><b>Тушаал өг.</b> Очих газар эсвэл дайсны гэр бааз дээр товш. Тулаан, харваа автоматаар явагдана.</li><li><b>Гэр баазыг эзэл.</b> Хамгаалагчдыг ялж, гэрийн дэргэд 6 секунд бай. Эзэлсэн бааз бүр алт өгнө.</li><li><b>Хүчээ нэм.</b> Алтаар цэрэг элсүүлж, зэвсгээ сайжруул. Өөрийн гэр дээр товшиж шинэ цэрэг гарах баазыг сонго.</li><li><b>Тусгай чадвар ашигла.</b> 📯 Дайны уухай (80 алт) 12 секунд цэргээ түр хүчирхэг болгоно. 🏹 Суман бороо (110 алт) сонгосон газар руу харвана. Чадвар бүр дахин ашиглах хугацаатай.</li><li><b>Даалгавраа биелүүл.</b> 2, 3, 5 бааз эзлэхэд нэмэлт алт авна. Хурдан удирдлагаар 1–4 цэргээ ялгаж, 5–6 чадвараа ашиглана.</li><li><b>Уурхай эзэл.</b> Газрын зураг дахь ⛏ тэмдэгтэй газарт цэргээ хүргээд 4 секунд хамгаална. 55 алт ба нэмэлт 4 алт/секунд олно.</li><li><b>Далбаагаа зохио.</b> Овгийн нэр, тугны өнгө, соёмбо эсвэл бусад сүлдийг сонгож хадгал. Дэлгэц дээрх ♫ АЯ товчоор анхны хөгжмөө тоглуул.</li><li><b>8 бааз эзэлбэл ялна.</b> Өөрийн бүх бааз, цэргээ алдвал ялагдана. 12 минутад хамгийн олон баазтай овог түрүүлнэ.</li></ol><p class="help-controls">H · баатар / цэрэг удирдах горим солих<br>Баатрын горимд WASD / сум · хөдөлгөх<br>Space · хурдлах (8 секунд), F · цэрэг дагуулах<br>Цэргийн горимд WASD / сум · зураг хөдөлгөх<br>Space · цэрэг дээр төвлөрөх &nbsp; Q / E · ойртуулах<br>1 · бүгд, 2 · морьт, 3 · харваач, 4 · баатар<br>5 · уухай, 6 · суман бороо, X · зогс, P · завсарлах<br>Утас · сумтай товчийг дарж баатраа хөдөлгөх<br>Газрын зураг · нэг хуруугаар чирэх, хоёр хуруугаар ойртуулах</p><p class="small-note">Найзуудтай тоглоход өрөөний эзэн хуудсаа нээлттэй байлгана. Холболт нь туршилтын нийтийн сервер ашиглана. Ганцаарчилсан тоглолт интернэтгүй ажиллана.</p><button class="primary" data-close>Ойлголоо, аянд мордъё →</button></dialog>
+<dialog id="introDialog" class="beginner-dialog"><button id="closeIntro" class="dialog-close" aria-label="Эхлэх заавар хаах">×</button><span class="eyebrow">АНХ УДАА ТОГЛОЖ БАЙНА УУ?</span><h2>Эхлээд нэг бааз<br><em>эзэлж суръя.</em></h2><p class="intro-lead">13 баазаас 8-ыг эзэлбэл ялна. Чиний баатар бол далбаатай хөх морьтон.</p><ol class="learn-steps"><li><span class="step-number">1</span><div><b>Баатраа хөдөлгө</b><p>Компьютерт WASD / сумтай товч. Утсанд доод зүүн талын сумнуудыг дарна.</p></div></li><li><span class="step-number">2</span><div><b>Дайсанд ойртож тулалд</b><p>Цэргүүд чинь хамт дагаж, автоматаар тулалдана.</p></div></li><li><span class="step-number">3</span><div><b>Баазын дэргэд 6 секунд бай</b><p>Хамгаалагчдыг ялсны дараа бааз чинийх болно. Тэгээд хашааг нь бэхэл.</p></div></li></ol><button class="primary" id="startGuided">Заавартай тоглох · Хялбар түвшин →</button><button class="text-button" id="skipIntro">Мэднэ ээ, шууд тоглоё →</button></dialog>
+<dialog id="helpDialog" class="beginner-dialog"><button class="dialog-close" data-close aria-label="Хаах">×</button><span class="eyebrow">ЯАЖ ТОГЛОХ ВЭ?</span><h2>Хөдөл. Тулалд.<br><em>Баазаа эзэл.</em></h2><ol class="learn-steps"><li><span class="step-number">1</span><div><b>Хөх баатар бол чи</b><p>WASD / сумтай товчоор, эсвэл утасны сумнуудаар хөдөлгөнө. «Цэргээ явуулах» товч чамайг дараагийн бааз руу чиглүүлнэ.</p></div></li><li><span class="step-number">2</span><div><b>Тулаан автоматаар явагдана</b><p>Цэргүүдээ хамт авч яв. Дайсанд ойртоход цохиж, харваж эхэлнэ.</p></div></li><li><span class="step-number">3</span><div><b>8 бааз эзэлж ял</b><p>Хамгаалагчдыг ялж, гэрийн дэргэд 6 секунд бай. Бааз алт өгнө. Алтаараа цэрэг элсүүлж, хашаагаа бэхэл.</p></div></li></ol><button id="restartCoach" class="primary">Алхамчилсан зааврыг эхлүүлэх →</button><details class="help-more"><summary>Нэмэлт удирдлага, чадвар</summary><p class="help-controls">H · баатар / цэргийн горим<br>Space · хурдлах (8 секундийн дараа дахин ашиглана)<br>F · цэрэг дагуулах / зогсоох<br>1–4 · бүх цэрэг / морьт / харваач / баатар<br>5 · дайны уухай (80 алт)<br>6 · суман бороо (110 алт), дараа нь газар товш<br>B · хашаа / чулуун хэрэм бэхлэх<br>X · цэрэг зогсоох · P · түр завсарлах<br>Уурхайг 4 секунд хамгаалбал +55 алт, +4 алт/секунд авна.<br>Дайсны хашааг нурааж байж баазыг нь эзэлнэ.<br>Найзуудын өрөө болон дэлхийн эрэмбэд интернэт шаардлагатай.</p></details><button class="text-button" data-close>Ойлголоо, тоглолт руу буцах →</button></dialog>
 <dialog id="resultDialog"><span class="eyebrow" id="resultKicker">ТАЛ НУТАГ НЭГДЛЭЭ</span> <div class="result-emblem">⚑</div><canvas id="winFlag" width="280" height="180" hidden aria-label="Ялагчийн улсын далбаа"></canvas><h2 id="resultTitle">Сүлд чинь мандлаа!</h2><p id="resultText"></p><div class="result-stats" id="resultStats"></div><div class="result-rp" id="resultRank"></div><button class="secondary" id="retryRank" hidden>Дүнгээ дахин явуулах</button><a id="huLink" class="victory-music" href="https://www.youtube.com/watch?v=jM8dCGIm6yc" target="_blank" rel="noopener noreferrer" hidden>▶ The HU — Wolf Totem (албан ёсны клип)</a><p class="victory-caption">Ялахад тоглоомын өөрийн ялалтын аялгуу эгшиглэнэ. The HU-гийн дууг тусдаа албан ёсны сувгаар сонсоорой.</p><button class="primary" id="playAgain">Дахин аянд мордох →</button><button class="text-button" id="viewMap">Газрын зургийг харах</button></dialog>
 <dialog id="rankDialog" class="rank-dialog"><button id="closeRank" class="dialog-close" aria-label="Эрэмбэ хаах">×</button><div class="rank-header"><div><span class="eyebrow">ТАЛЫН ЭЗЭД · I УЛИРАЛ</span><h2>Сүлдийн <em>эрэмбэ.</em></h2></div><div class="rank-mark">♜</div></div><div class="rank-summary"><div><b id="myRankName">Шинэ дайчин</b><small>ЧИНИЙ ЗЭРЭГ</small></div><div><b id="myRankPoints">—</b><small>ЭРЭМБИЙН ОНОО · RP</small></div><div><b id="myRankWins">—</b><small>ЯЛАЛТ</small></div></div><div class="rank-tabs" role="tablist" aria-label="Эрэмбийн төрөл"><button id="globalRankTab" role="tab" aria-selected="true">Дэлхийн ТОП</button><button id="matchRankTab" role="tab" aria-selected="false">Энэ тоглолт</button></div><p id="rankGlobalStatus" class="rank-footnote" role="status"></p><table class="rank-table"><thead><tr><th>#</th><th>БААТАР / ОВОГ</th><th>ЗЭРЭГ</th><th>RP</th><th>ЯЛАЛТ</th></tr></thead><tbody id="rankRows"></tbody></table><div class="rank-ladder"><span>Шинэ дайчин · 0</span><span>Хүрэл · 250</span><span>Мөнгөн · 750</span><span>Алтан · 1500</span><span>Хөх чоно · 3000</span><span>Их хаан · 6000</span></div><p class="rank-footnote">Дэлхийн жагсаалтад «Эрэмбэтэй аян»-ы серверээр дахин тооцсон дүн орно. Хоч, оноо, ялалтын тоо нийтэд харагдана. Өөр төхөөрөмжид энэ хөтчийн профайл автоматаар шилжихгүй.</p></dialog>
 <dialog id="installDialog"><button id="closeInstall" class="dialog-close" aria-label="Суулгах заавар хаах">×</button><span class="eyebrow">МОНГОЛ БААТРУУД · АПП</span><h2>Тал нутаг<br><em>чиний утсанд.</em></h2><span class="install-badge">НҮҮР ДЭЛГЭЦЭД СУУЛГАНА</span><p class="install-steps"><strong>iPhone:</strong> Safari-д нээгээд Share / Хуваалцах → <strong>Add to Home Screen</strong> → Add.<br><br><strong>Android / компьютер:</strong> Доорх «Апп суулгах» товч эсвэл хөтчийн цэсний Install app / Апп суулгах сонголтыг дар.</p><button class="primary" id="installConfirm">Апп суулгах →</button><p class="small-note" id="installStatus">Нэг удаа нээсний дараа дасгалын горим интернэтгүй ажиллана. Эрэмбэ болон найзуудын өрөөнд интернэт хэрэгтэй.</p></dialog>
@@ -696,6 +704,7 @@ class Renderer{
   const drift=(s.time*3)%2600;
   for(let k=0;k<5;k++){const xx=(k*455+drift)%2600-280,yy=140+k*236;c.fillStyle=k%2?'#173b43':'#f4edbb';c.beginPath();c.ellipse(xx,yy,155,43,-.18,0,Math.PI*2);c.fill()}
   c.restore();this.cacheTerritory(s);c.drawImage(this.territory,0,0);
+  if(this.guideTarget){const target=this.guideTarget;c.save();c.strokeStyle='#ffdf82';c.lineWidth=2.5;c.setLineDash([8,5]);c.beginPath();c.ellipse(target.x,target.y,117,86,0,0,Math.PI*2);c.stroke();c.setLineDash([]);c.font='bold 12px Arial';c.textAlign='center';const label=target.label,tw=c.measureText(label).width;c.fillStyle='#17313bea';c.fillRect(target.x-tw/2-11,target.y-107,tw+22,23);c.fillStyle='#ffe3a0';c.fillText(label,target.x,target.y-91);c.restore()}
   const chosen=s.units.filter(u=>selected.has(u.id)&&u.owner===mine);
   this.unitHP??=new Map();const currentHP=new Map();
   for(const unit of s.units){const prev=this.unitHP.get(unit.id);if(prev&&prev.hp>unit.hp+.1)this.effects.push({type:'hit',x:unit.x,y:unit.y-34,t:.7,owner:unit.owner,damage:Math.round(prev.hp-unit.hp)});currentHP.set(unit.id,{hp:unit.hp,x:unit.x,y:unit.y,owner:unit.owner})}
@@ -769,6 +778,8 @@ let held=new Set(),pointers=new Map(),drag=null,pinch=null,suppressTap=false,hel
 let difficulty='normal',playSpeed=1,targeting=false;
 let heroMode=false,escortOn=true,heroAt=0,lastHeroInput='',touchDirections=new Map();
 let rankSession=null,replay=[],simFrame=0,simAccumulator=0,runId='',rankSending=false,rankView='global',installPrompt=null;
+const GUIDE_KEY='mongol-baatruud-guide-v1';
+let coach={active:false,stage:0,target:-1},recommendedCamp=-1,routeFollow=false;
 const PROFILE_KEY='mongol-baatruud-player-v4';
 let profile;try{profile=JSON.parse(localStorage.getItem(PROFILE_KEY))}catch{}
 if(!profile||!/^[-a-f0-9]{36}$/.test(profile.id||'')||!/^[a-f0-9]{64}$/.test(profile.key||''))profile={id:crypto.randomUUID(),key:Array.from(crypto.getRandomValues(new Uint8Array(32)),v=>v.toString(16).padStart(2,'0')).join(''),name:'',skin:'sky'};
@@ -784,6 +795,67 @@ function paintFlagPreview(){const a=$('flagPreview');if(!a||!globalThis.SteppeFl
 function saveFlagChoice(){myFlag={primary:$('flagPrimary').value,accent:$('flagAccent').value,symbol:$('flagSymbol').value,name:($('countryName').value||'Хөх Монгол').trim().slice(0,18)};paintFlagPreview();try{localStorage.setItem(FLAG_SAVE,JSON.stringify(myFlag))}catch{};if(started){issue({type:'flag',flag:myFlag,name:myFlag.name});updateUI()}toast('🏳️ Өөрийн далбаа хадгалагдлаа!');if(soundOn)SteppeAudio.fx('flag')}
 
 function safeName(n){return String(n||'Баатар').replace(/[<>\x00-\x1f]/g,'').trim().slice(0,18)||'Баатар'}
+function rememberGuide(){try{localStorage.setItem(GUIDE_KEY,'1')}catch{}}
+function openIntro(){if(!$('introDialog').open)$('introDialog').showModal()}
+function beginPractice(){let seen=false;try{seen=localStorage.getItem(GUIDE_KEY)==='1'}catch{}if(seen)startSolo();else openIntro()}
+function startGuided(){
+ $('introDialog').close();rememberGuide();setDifficulty('easy');startSolo();beginCoach();
+}
+function nextTarget(){
+ const current=state.camps[recommendedCamp];if(current&&current.owner!==mine)return current;
+ const u=hero()||own()[0]||state.camps.find(c=>c.owner===mine)||{x:E.W/2,y:E.H/2};
+ const candidates=state.camps.filter(c=>c.owner!==mine);
+ candidates.sort((a,b)=>{const score=c=>E.dist(u,c)+(c.owner<0?0:600)+(c.fortHp||0)*.3;return score(a)-score(b)});
+ recommendedCamp=candidates[0]?.id??-1;return candidates[0]||null;
+}
+function beginCoach(){
+ if(!started||state.phase!=='playing'||role!=='solo'||rankSession){toast('Алхамчилсан зааврыг ганцаараа дасгалын аянд ашиглаарай.');return}
+ if(paused)togglePause();recommendedCamp=-1;const target=nextTarget();if(!target)return;
+ coach={active:true,stage:0,target:target.id};rememberGuide();updateUI();
+}
+function endCoach(){coach.active=false;routeFollow=false;$('coachCard').hidden=true;$('battlefield').classList.remove('guiding');if(started&&!paused&&state.phase==='playing'&&hero())setHeroMode(true,false);updateNextGoal()}
+function goToNextCamp(){
+ if(!started||paused||state.phase!=='playing')return false;
+ const camp=coach.active?state.camps[coach.target]:nextTarget();if(!camp||camp.owner===mine)return false;
+ if(!own().length){toast('Өөрийн баазаас цэрэг элсүүлээрэй.');setSidebar(true);return false}
+ all();if(!moveTo({x:camp.x,y:camp.y},camp))return false;
+ recommendedCamp=camp.id;routeFollow=true;setSidebar(false);toast('«'+camp.name+'» руу цэргүүдээ явууллаа. Тулаан автоматаар явагдана.');return true;
+}
+function coachAction(){
+ if(!coach.active)return;
+ if(coach.stage===2){endCoach();toast('Дараагийн баазаа эзэлж, 8 бааз хүргээрэй!');return}
+ if(coach.stage===0){goToNextCamp();return}
+ if(issue({type:'fortify',camp:coach.target})){note(520);updateUI()}
+}
+function updateNextGoal(){
+ const camp=coach.active?state.camps[coach.target]:nextTarget(),can=started&&!paused&&state.phase==='playing';
+ $('nextCamp').disabled=!can||!camp||!own().length||camp.owner===mine;
+ $('nextCampName').textContent=camp?(camp.owner===mine?'Хамгаалах бааз: ':'Дараагийн бай: ')+camp.name:'Бүх бааз чинийх боллоо';
+ let text='Хамгаалагчдыг ялж, дэргэд нь 6 секунд бай.';
+ if(camp?.owner===mine)text='Эзэлсэн баазаа чулуун хэрэмтэй болгож хамгаал.';
+ else if(camp?.claimant===mine&&camp.capture>0)text='Эзэлж байна · '+Math.max(1,Math.ceil(6-camp.capture))+' секунд үлдлээ.';
+ else if(camp?.fortHp>0)text='Дайсны хашааг нураасны дараа баазыг эзэлнэ.';
+ else if(camp&&own().some(u=>E.dist(u,camp)<120))text='Хамгаалагчдыг ялмагц баазыг эзэлж эхэлнэ.';
+ if(!started)text='Тоглож эхлээд эхний саарал баазыг эзлээрэй.';
+ $('nextCampStatus').textContent=text;
+ art.guideTarget=can&&camp&&(!coach.active||coach.stage<2)?{x:camp.x,y:camp.y,name:camp.name,label:camp.owner===mine?'ХАШААГАА БЭХЭЛ':'ЭНЭ БААЗЫГ ЭЗЭЛ'}:null;
+}
+function updateCoach(){
+ if(coach.active&&(!started||state.phase!=='playing'||resultShown))coach.active=false;
+ let camp=state.camps[coach.target];
+ if(coach.active&&coach.stage===0&&camp?.owner===mine){coach.stage=1;spawn=camp.id;note(587)}
+ if(coach.active&&coach.stage===1&&camp?.owner!==mine){recommendedCamp=-1;camp=nextTarget();coach.target=camp?.id??-1;coach.stage=0}
+ if(coach.active&&coach.stage===1&&camp?.fortLevel===2&&camp.fortHp>0){coach.stage=2;note(660)}
+ $('coachCard').hidden=!coach.active;$('battlefield').classList.toggle('guiding',coach.active);
+ if(coach.active){
+  $('coachStep').textContent='АЛХАМ '+(coach.stage+1)+' / 3';$('coachProgress').style.width=((coach.stage+1)/3*100)+'%';
+  const capturing=camp?.claimant===mine&&camp.capture>0;
+  if(coach.stage===0){$('coachTitle').textContent='Эхний баазаа эзэл';$('coachText').textContent=capturing?'Эзэлж байна! Эндээ '+Math.max(1,Math.ceil(6-camp.capture))+' секунд үлдээрэй.':'«'+(camp?.name||'Бааз')+'»-ийг эзэл. Доорх товчоор цэргүүдээ хамт явуул.';$('coachAction').textContent='Цэргээ бааз руу явуулах →';$('coachAction').disabled=paused||!camp||!own().length||capturing}
+  else if(coach.stage===1){const price=camp.fortHp>0?160:100;$('coachTitle').textContent='Баазаа хамгаал';$('coachText').textContent='Бааз чинийх боллоо! Одоо хашааг нь бэхэл. Алт: '+Math.floor(state.gold[mine])+' / '+price+'.';$('coachAction').textContent=(camp.fortHp>0?'Чулуун хэрэм болгох · ':'Модон хашаа барих · ')+price+' алт';$('coachAction').disabled=paused||state.gold[mine]<price}
+  else{$('coachTitle').textContent='Сайн байна, сурчихлаа!';$('coachText').textContent='Баазаа эзэлж, хамгаалж чадлаа. Одоо «Цэргээ явуулах» товчоор дараагийн бай руу оч. 8 бааз эзэлбэл ялна.';$('coachAction').textContent='Өөрөө үргэлжлүүлэн тоглох →';$('coachAction').disabled=false}
+ }
+ updateNextGoal();
+}
 function setSkin(skin){
  const colors={sky:{color:'#78bedc',dark:'#25475f',light:'#d3f0ef'},gold:{color:'#d7b365',dark:'#6e5137',light:'#fff0bb'},ruby:{color:'#ce7771',dark:'#683b44',light:'#ffe1b9'}};
  profile.skin=colors[skin]?skin:'sky';globalThis.SteppeSkin=colors[profile.skin];persistProfile();
@@ -853,12 +925,13 @@ function own(){return E.owned(state,mine)}
 function hero(){return own().find(u=>u.type==='hero')}
 function clearHeroInput(){held.clear();touchDirections.clear();for(const b of document.querySelectorAll('[data-dir]'))b.classList.remove('pressed');lastHeroInput='';if(started&&heroMode)issue({type:'heroControl',active:true,dx:0,dy:0})}
 function setHeroMode(on,notify=true){
- heroMode=!!on&&!!hero()&&started;clearHeroInput();
+ heroMode=!!on&&!!hero()&&started;routeFollow=false;clearHeroInput();
  if(started&&hero())issue({type:'heroControl',active:heroMode,dx:0,dy:0});
  if(heroMode)issue({type:'escort',follow:escortOn});
  $('battlefield').classList.toggle('hero-mode',heroMode);$('heroPad').hidden=!heroMode;$('heroToggle').setAttribute('aria-pressed',String(heroMode));
- $('heroToggle').firstChild.textContent=heroMode?'◆ Баатраа удирдах':'⚑ Цэргээ удирдах';
- $('heroHint').textContent=heroMode?'WASD / сум · хөдөлгөх. Ойртсон дайснаа автоматаар цохино.':'Цэргээ сонгоод очих газраа товш. H дарж баатраа удирдана.';
+ $('heroToggle').firstChild.textContent=heroMode?'⚑ Цэргээ сонгох':'◆ Баатраа удирдах';
+ $('heroToggle').querySelector('small').textContent=heroMode?'H · Цэргийн горим':'H · Баатрын горим';
+ $('heroHint').textContent=heroMode?'Чи баатраа удирдаж байна. WASD / сум · хөдөлгөх. Тулаан автоматаар явагдана.':'Цэргүүдэд очих газар товшино. Баатраа дахин хөдөлгөх бол «Баатраа удирдах» дар.';
  if(heroMode){cancelTarget();dismissTutorial();centerHero()}
  if(notify)toast(heroMode?'◆ Баатрын горим: WASD / сум, Space — хурдлах.':'⚑ Цэргийн горим: цэргээ сонгоод газар товш.');updateHeroUI();
 }
@@ -904,7 +977,7 @@ function center(){const us=own().filter(u=>selected.has(u.id));const set=us.leng
 function setSidebar(v){$('sidebar').classList.toggle('open',v);$('menuToggle').setAttribute('aria-expanded',String(v))}
 function dismissTutorial(){$('tutorial').hidden=true}
 function enterGame(){
- $('startShortcut').hidden=true;$('launchpad').hidden=true;art.effects=[];art.unitHP=new Map();
+ $('startShortcut').hidden=true;$('launchpad').hidden=true;art.effects=[];art.unitHP=new Map();coach={active:false,stage:0,target:-1};recommendedCamp=-1;routeFollow=false;
  E.initExtras(state);started=true;paused=false;resultShown=false;lastEvent=state.seq||0;issue({type:'flag',flag:myFlag,name:myFlag.name});
  $('quickbar').hidden=false;$('speed').hidden=role!=='solo';$('speed').disabled=!!rankSession;cancelTarget();
  $('startPanel').hidden=true;$('commandPanel').hidden=false;$('newGame').hidden=false;$('pauseScreen').hidden=true;$('selectionBadge').hidden=false;$('tutorial').hidden=false;
@@ -923,7 +996,7 @@ function startSolo(restore=false){
 }
 function saveSolo(){if(role!=='solo'||!started||resultShown||state.phase!=='playing')return;try{localStorage.setItem(SAVE,JSON.stringify({...E.snapshot(state),playSpeed,rankSession,replay,simFrame,runId}))}catch{}}
 function resetReady(){
- $('startShortcut').hidden=false;$('launchpad').hidden=false;$('fortTools').hidden=true;
+ $('startShortcut').hidden=false;$('launchpad').hidden=false;$('fortTools').hidden=true;coach={active:false,stage:0,target:-1};recommendedCamp=-1;routeFollow=false;art.guideTarget=null;$('coachCard').hidden=true;$('battlefield').classList.remove('guiding');
  SteppeAudio.setMusic(false);if($('music')){$('music').setAttribute('aria-pressed','false');$('music').textContent='♫ АЯ'}
  saveSolo();stopNetwork();rankSession=null;replay=[];simFrame=0;simAccumulator=0;role=null;mine=0;started=false;paused=false;playSpeed=1;state=E.create();cancelTarget();$('quickbar').hidden=true;selected.clear();spawn=0;lastEvent=0;resultShown=false;
  heroMode=false;clearHeroInput();$('battlefield').classList.remove('hero-mode');$('heroHud').hidden=true;$('heroPad').hidden=true;$('speed').querySelector('small').textContent='1×';
@@ -944,7 +1017,7 @@ function moveTo(p,camp){
  if(!selected.size){toast('Цэрэг алга. Өөрийн гэр баазаас цэрэг элсүүлээрэй.');setSidebar(true);return}
  const target=camp?{x:camp.x,y:camp.y}:p;
  if(issue({type:'move',ids:[...selected],x:target.x,y:target.y,camp:camp?.id??-1})){
-  art.addMarker(target.x,target.y,mine);dismissTutorial();note(260);$('orderText').textContent=camp?'«'+camp.name+'» руу хөдөлж байна':'Шинэ байрлал руу хөдөлж байна';
+  art.addMarker(target.x,target.y,mine);dismissTutorial();note(260);$('orderText').textContent=camp?'«'+camp.name+'» руу хөдөлж байна':'Шинэ байрлал руу хөдөлж байна';return true;
  }
 }
 function recruit(type){const c=getSpawn();if(!c){toast('Эхлээд гэр бааз эзлэх хэрэгтэй.');return}const oldIds=new Set(own().map(u=>u.id));const ok=issue({type:'recruit',unit:type,camp:c.id});if(!ok){toast(own().length>=60?'60 цэргийн хязгаарт хүрсэн.':'Алт хүрэлцэхгүй байна.');return}if(role!=='guest'){for(const u of own())if(!oldIds.has(u.id))selected.add(u.id)}note(490);updateUI()}
@@ -969,7 +1042,7 @@ function updateUI(){
  for(const b of document.querySelectorAll('[data-skill]')){
   const ability=b.dataset.skill,price=ability==='rally'?80:110,seconds=Math.ceil(Math.max(0,state.skillReady[mine][ability]-state.time)),cool=seconds>0;
   b.disabled=!can||state.gold[mine]<price||cool;
-  const t=b.querySelector('[data-skill-time]');if(t)t.textContent=cool?seconds+'с':b.closest('.quickbar')?(ability==='rally'?'УУХАЙ':'СУМАН'):price+' алт';
+  const t=b.querySelector('[data-skill-time]');if(t)t.textContent=cool?seconds+'с':b.closest('.quickbar')?(ability==='rally'?'Уухай':'Суман бороо'):price+' алт';
  }
  const goals=[2,3,5],awards=[70,100,150],mission=state.missions[mine];
  $('missionText').textContent=mission>=3?'Бүх аян даалгавар биелсэн!':goals[mission]+' бааз эзэл · +'+awards[mission]+' алт';
@@ -983,7 +1056,7 @@ function updateUI(){
  if(started&&state.phase==='playing'&&!counts[mine]&&!us.length){$('eventText').textContent='Танай овог бүх бааз, цэргээ алдлаа.';if(!resultShown)showResult(false)}
  if(started&&state.phase==='ended'&&!resultShown)showResult(state.winner===mine);
  renderStandings();
- updateHeroUI();updateFortUI();
+ updateHeroUI();updateFortUI();updateCoach();
 }
 function showResult(won){
  resultShown=true;const draw=state.winner===-1;if(role==='solo')paused=true;
@@ -1001,7 +1074,7 @@ function drawWinFlag(){const a=$('winFlag'),c=a.getContext('2d');c.clearRect(0,0
 function clickMap(x,y,shift=false){const p=art.screenToWorld(x,y);if(targeting){fireVolley(p);return}let u=null,best=Infinity;for(const v of own()){const d=Math.hypot(v.x-p.x,v.y-15-p.y);if(d<28/art.camera.z&&d<best){best=d;u=v}}if(u){if(shift){if(selected.has(u.id))selected.delete(u.id);else selected.add(u.id)}else selected=new Set([u.id]);updateUI();note(370);return}const camp=state.camps.find(c=>Math.hypot(c.x-p.x,c.y-p.y)<53);if(camp?.owner===mine){spawn=camp.id;toast('Цэрэг гарах бааз: '+camp.name);updateUI();if(started&&selected.size)moveTo(p,camp);return}const quarry=state.mines?.find(m=>Math.hypot(m.x-p.x,m.y-p.y)<55);if(quarry){moveTo(p,undefined);toast('⛏ '+quarry.name+' — 4 секунд хамгаалж эзэлнэ.');return}moveTo(p,camp)}
 function localPoint(e){const r=map.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
 map.addEventListener('pointerdown',e=>{
- if(e.button===2)e.preventDefault();if(e.button>2)return;
+ if(e.button===2)e.preventDefault();if(e.button>2)return;routeFollow=false;
  const p=localPoint(e);map.setPointerCapture(e.pointerId);pointers.set(e.pointerId,p);
  if(pointers.size===2){const pts=[...pointers.values()];pinch={d:Math.hypot(pts[0].x-pts[1].x,pts[0].y-pts[1].y)};suppressTap=true;drag=null;art.selection=null;return}
  const box=e.pointerType==='mouse'&&e.button===0&&started&&!e.altKey;
@@ -1100,8 +1173,11 @@ function launchOnline(){if(role!=='host'||!members.size)return;const humans=[0,.
 async function copyInvite(){const url=new URL(location.href);url.searchParams.set('room',code);url.hash='';const text='Монгол баатрууд — Талын эзэд\nӨрөөний код: '+code+'\n'+url.href;try{await navigator.clipboard.writeText(text);connection('Урилга хууллаа. Найздаа явуулаарай.')}catch{connection('Өрөөний код: '+code+' — найздаа энэ кодыг өг.')}}
 function onMode(online){if(networkBusy)return;$('startShortcut').hidden=online;$('soloTab').setAttribute('aria-selected',String(!online));$('onlineTab').setAttribute('aria-selected',String(online));$('soloMenu').hidden=online;$('onlineMenu').hidden=!online;connection('')}
 
-$('startShortcut').onclick=()=>startSolo();$('start').onclick=()=>startSolo();$('resume').onclick=()=>startSolo(true);$('soloTab').onclick=()=>onMode(false);$('onlineTab').onclick=()=>onMode(true);$('createRoom').onclick=()=>connectRoom(true);$('joinRoom').onclick=()=>connectRoom(false);$('launchOnline').onclick=launchOnline;$('leaveLobby').onclick=resetReady;$('copyInvite').onclick=copyInvite;
+$('startShortcut').onclick=beginPractice;$('start').onclick=()=>startSolo();$('resume').onclick=()=>startSolo(true);$('soloTab').onclick=()=>onMode(false);$('onlineTab').onclick=()=>onMode(true);$('createRoom').onclick=()=>connectRoom(true);$('joinRoom').onclick=()=>connectRoom(false);$('launchOnline').onclick=launchOnline;$('leaveLobby').onclick=resetReady;$('copyInvite').onclick=copyInvite;
 $('selectAll').onclick=all;$('stop').onclick=stop;
+$('learnPlay').onclick=openIntro;$('closeIntro').onclick=()=>$('introDialog').close();$('startGuided').onclick=startGuided;$('skipIntro').onclick=()=>{$('introDialog').close();rememberGuide();startSolo()};
+$('coachAction').onclick=coachAction;$('coachSkip').onclick=endCoach;$('nextCamp').onclick=goToNextCamp;
+$('restartCoach').onclick=()=>{$('helpDialog').close();if(!started)openIntro();else beginCoach()};
 $('fortify').onclick=fortify;$('repairFort').onclick=repairFort;$('rankedStart').onclick=startRanked;$('homeResume').onclick=()=>startSolo(true);$('friendLaunch').onclick=()=>{$('launchpad').hidden=true;onMode(true);setSidebar(true)};
 $('playerNickname').value=profile.name||'';$('playerNickname').addEventListener('change',()=>{profile.name=safeName($('playerNickname').value);persistProfile()});
 for(const b of document.querySelectorAll('[data-open-rank]'))b.onclick=openRanks;
@@ -1127,7 +1203,7 @@ $('saveFlag').onclick=saveFlagChoice;
 for(const id of ['flagPrimary','flagAccent','flagSymbol'])$(id).addEventListener('change',()=>{myFlag={...myFlag,primary:$('flagPrimary').value,accent:$('flagAccent').value,symbol:$('flagSymbol').value};paintFlagPreview()});
 setFlagInputs();
 $('pause').onclick=togglePause;$('unpause').onclick=togglePause;$('sound').onclick=setSound;$('dismissTutorial').onclick=dismissTutorial;$('menuToggle').onclick=()=>setSidebar(!$('sidebar').classList.contains('open'));
-$('help').onclick=()=>{clearHeroInput();helpWasPaused=paused;if(role==='solo'&&started&&!paused){paused=true}held.clear();$('helpDialog').showModal()};
+$('help').onclick=()=>{$('restartCoach').disabled=started&&(role!=='solo'||!!rankSession);clearHeroInput();helpWasPaused=paused;if(role==='solo'&&started&&!paused){paused=true}held.clear();$('helpDialog').showModal()};
 for(const b of document.querySelectorAll('[data-close]'))b.onclick=()=>$('helpDialog').close();$('helpDialog').addEventListener('close',()=>{if(role==='solo')paused=helpWasPaused;updatePauseButton();$('pauseScreen').hidden=!paused});
 $('newGame').onclick=resetReady;$('playAgain').onclick=()=>{$('resultDialog').close();if(role==='solo')startSolo();else resetReady()};$('viewMap').onclick=()=>$('resultDialog').close();
 $('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{toast('Энэ хөтөч бүтэн дэлгэц дэмжихгүй байна.')}};
@@ -1142,6 +1218,7 @@ function frame(now){
   if(role==='host'&&started&&now-netAt>180){netAt=now;broadcastState()}
   if(now-pingAt>3500){pingAt=now;if(role==='host'){if(!started)publishLobby();for(const [key,m]of members)if(now-m.seen>18000)removeMember(key)}else if(role==='guest'){relay.publish('host',{type:'ping',sid});if(now-hostSeen>20000){netFailure('Өрөөний эзэнтэй холболт тасарлаа. Дахин өрөө нээгээрэй.')}}}
  }
+ if(routeFollow&&started&&!paused){if(held.has('w')||held.has('a')||held.has('s')||held.has('d')||held.has('arrowup')||held.has('arrowdown')||held.has('arrowleft')||held.has('arrowright'))routeFollow=false;else{const leader=hero()||own()[0];if(leader){art.camera.x=leader.x;art.camera.y=leader.y;art.bound()}}}
  if(heroMode&&started)centerHero();
  if(started||$('launchpad').hidden)art.render(state,selected,mine>=0?mine:0,dt,now);
  if(now-uiAt>220&&(started||$('launchpad').hidden)){uiAt=now;if(mine>=0)updateUI()}
@@ -1155,7 +1232,7 @@ const invite=new URLSearchParams(location.search).get('room');if(invite&&/^\d{6}
 if(new URLSearchParams(location.search).get('rank')==='1')openRanks();
 requestAnimationFrame(frame);
 // Readable diagnostics for local QA, also useful when building on this source.
-window.Steppe={get replay(){return JSON.parse(JSON.stringify(replay))},get ranked(){return!!rankSession},get simFrame(){return simFrame},get heroMode(){return heroMode},get escortOn(){return escortOn},setHeroMode,get difficulty(){return difficulty},get targeting(){return targeting},get speed(){return playSpeed},get state(){return state},get role(){return role},get mine(){return mine},get selected(){return[...selected]},get paused(){return paused},get camera(){return art.camera},pack,unpack,startSolo,command:issue,renderer:art};
+window.Steppe={get guide(){return{...coach}},get nextCamp(){return recommendedCamp},get replay(){return JSON.parse(JSON.stringify(replay))},get ranked(){return!!rankSession},get simFrame(){return simFrame},get heroMode(){return heroMode},get escortOn(){return escortOn},setHeroMode,get difficulty(){return difficulty},get targeting(){return targeting},get speed(){return playSpeed},get state(){return state},get role(){return role},get mine(){return mine},get selected(){return[...selected]},get paused(){return paused},get camera(){return art.camera},pack,unpack,startSolo,command:issue,renderer:art};
 })();
 
 </script>
