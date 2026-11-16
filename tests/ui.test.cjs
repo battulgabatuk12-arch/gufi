@@ -74,7 +74,7 @@ test('the new lobby launches play and the fortification button upgrades an owned
   a.click('newGame'); assert.equal(a.document.getElementById('launchpad').hidden, false);
 });
 test('ranked play uses fixed steps and exact save/resume positions reproduce the command log', async () => {
-  const ticket = { id: '0bd2bfe3-78e0-4071-b8bd-c796e7a606af', token: 'a'.repeat(64), seed: 93472, difficulty: 'normal', version: '4.0' };
+  const ticket = { id: '0bd2bfe3-78e0-4071-b8bd-c796e7a606af', token: 'a'.repeat(64), seed: 93472, difficulty: 'normal', version: '4.2', rulesVersion: 2 };
   const fetchImpl = async () => ({ ok: true, json: async () => ticket });
   const a = app({ fetchImpl }); a.document.getElementById('playerNickname').value = 'Туршилтын баатар'; await a.click('rankedStart');
   assert.equal(a.steppe.ranked, true); assert.equal(a.steppe.speed, 1);

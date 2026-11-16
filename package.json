@@ -1,6 +1,6 @@
 {
   "name": "mongol-baatruud",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "private": true,
   "description": "Монгол баатрууд — Баатрын аян",
   "scripts": { "build": "node scripts/build.cjs", "test": "node --test tests/*.test.cjs" },
