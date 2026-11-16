@@ -53,10 +53,18 @@ test('unfinished matches, invalid commands, and accelerated replays cannot earn 
   assert.throws(() => replayResult(session, { frames: 30, commands: [{ frame: 0, cmd: { type: 'upgrade', owner: 3 } }, { frame: 0, cmd: { type: 'upgrade' } }] }, 20000), RankError);
   assert.throws(() => replayResult(session, { frames: 30, commands: [{ frame: -1, cmd: { type: 'move' } }] }, 20000), RankError);
 });
-test('a complete deterministic game is replayed and client-supplied scores are ignored', () => {
-  const E = require('../lib/engine.cjs'), session = { createdAt: 0, seed: 103451, difficulty: 'normal' }, state = E.create([0], {}, { seed: session.seed, difficulty: session.difficulty });
+test('rank tickets negotiate rules with both cached 4.1 and new clients', async () => {
+  const store = new MemoryStore(), service = createRankService({ store, now: () => 1000000 });
+  const legacy = await service.start(player()), modern = await service.start({ ...player(), rulesVersion: 2 });
+  assert.equal(legacy.rulesVersion, 1); assert.equal(modern.rulesVersion, 2);
+  assert.equal((await store.read('sessions/' + modern.id + '.json')).value.rulesVersion, 2);
+});
+test('training commands are verified by replay and client-supplied scores are ignored', () => {
+  const E = require('../lib/engine.cjs'), session = { createdAt: 0, seed: 103451, difficulty: 'normal', rulesVersion: 2 }, state = E.create([0], {}, { seed: session.seed, difficulty: session.difficulty, rulesVersion: session.rulesVersion });
   state.phase = 'playing'; let frames = 0;
+  const commands = [{ frame: 0, cmd: { type: 'train', unit: 'cavalry' } }];
+  assert.equal(E.command(state, 0, commands[0].cmd), true);
   while (state.phase === 'playing' && !(E.counts(state)[0] === 0 && E.owned(state, 0).length === 0)) { E.tick(state, 1/30); frames++; }
-  const result = replayResult(session, { frames, commands: [], rp: 9999999, winner: 0 }, 800000);
+  const result = replayResult(session, { frames, commands, rp: 9999999, winner: 0 }, 800000);
   assert.deepEqual(result, E.rankPoints(state, 0)); assert.ok(result.rp <= 1000);
 });
