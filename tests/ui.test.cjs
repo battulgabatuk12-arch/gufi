@@ -109,7 +109,7 @@ test('the guided first camp is really captured and fortified, then manual contro
   // The harness canvas is already a no-op. Avoid replaying thousands of draw calls
   // while exercising the real command, combat, capture, and coaching state path.
   a.steppe.renderer.render = () => {};
-  a.click('coachAction'); assert.equal(a.steppe.heroMode, false);
+  a.click('coachAction'); assert.equal(a.steppe.heroMode, true, 'phone guidance keeps the same movement controls');
   for (let i = 0; i < 4000 && a.steppe.guide.stage === 0; i++) a.frame();
   assert.equal(a.steppe.state.camps[id].owner, 0); assert.equal(a.steppe.guide.stage, 1);
   a.click('coachAction'); assert.equal(a.steppe.state.camps[id].fortLevel, 2);
