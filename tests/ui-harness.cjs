@@ -45,7 +45,7 @@ class Node {
   setPointerCapture() {}
   showModal() { this.open = true; this.attrs.open = ''; }
   close() { this.open = false; delete this.attrs.open; this.dispatch('close'); }
-  getContext() { return new Proxy({ measureText: s => ({ width: String(s).length * 6 }) }, { get: (t, p) => p in t ? t[p] : () => {} }); }
+  getContext() { return new Proxy({ measureText: s => ({ width: String(s).length * 6 }), createRadialGradient: () => ({ addColorStop() {} }) }, { get: (t, p) => p in t ? t[p] : () => {} }); }
   getBoundingClientRect() { return this.rect || { x: 0, y: 0, left: 0, top: 0, width: 210, height: 140 }; }
 }
 function documentFromHtml(width, height) {
