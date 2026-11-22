@@ -69,6 +69,19 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
 @media(max-width:380px){.brand{font-size:7px}.resources{gap:5px}.resources b{font-size:13px}.topbar{gap:5px}.hero-pad{width:152px;height:152px;left:10px}.hero-pad [data-dir=up],.hero-pad [data-dir=down]{left:48px}.hero-pad [data-dir=left],.hero-pad [data-dir=right]{top:48px}.hero-pad button{width:50px;height:50px}.hero-pad .joystick-stick{left:51px;top:51px}.hero-hud{width:calc(100% - 177px)}.objective{grid-template-columns:78px 1fr;gap:0 8px}.objective .next-camp{grid-template-columns:1fr 84px}.quickbar button small{font-size:10px}}
 @media(max-height:540px) and (max-width:1100px){.topbar{height:calc(50px + env(safe-area-inset-top))}.workspace{height:calc(100% - 50px - env(safe-area-inset-top))}.sidebar{top:calc(50px + env(safe-area-inset-top))}.objective{right:auto;width:330px;min-height:82px}.map-tools{top:10px}.hero-hud{width:240px;max-width:none;bottom:calc(80px + env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right))}.hero-buttons{grid-template-columns:1fr 1fr}.hero-buttons button{font-size:11px}.hero-health{margin:6px 0}.hero-hud .escort-button{min-height:44px}.hero-pad{width:146px;height:146px;bottom:calc(84px + env(safe-area-inset-bottom))}.hero-pad button{width:48px;height:48px}.hero-pad [data-dir=up],.hero-pad [data-dir=down]{left:47px}.hero-pad [data-dir=left],.hero-pad [data-dir=right]{top:47px}.hero-pad .joystick-stick{left:48px;top:48px}.quickbar{left:180px;right:270px;bottom:calc(12px + env(safe-area-inset-bottom));min-width:330px}.coach-card{top:104px;left:180px;max-width:360px;max-height:calc(100% - 185px);overflow:auto}.toast,.target-hint{top:105px}.selection-badge{bottom:80px;left:180px}.launch-content{margin-top:18px}}
 
+
+/* Readable campaign journal and optional battlefield detail. */
+.campaign-journal{border-top:1px solid #d5b87940;padding-top:18px}
+.campaign-journal summary{cursor:pointer;color:#e8d09b;font-size:12px;padding:8px 0}
+.campaign-journal p{font-size:11px;line-height:1.8;color:#b9c9b7}
+.visual-options{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.visual-options button{border:1px solid #d5b87955;border-radius:5px;padding:12px;font-size:11px;min-height:44px}
+.visual-options button[aria-pressed=true]{background:#d5b879;color:#172b2c}
+.campaign-log{padding:0;list-style:none;max-height:240px;overflow:auto}
+.campaign-log li{padding:10px 0;border-bottom:1px solid #ffffff18;font-size:11px;line-height:1.7;overflow-wrap:anywhere}
+.campaign-log time{color:#d5b879;font:10px monospace;display:block;margin-bottom:3px}
+.map-legend{font-size:10px;line-height:1.8;color:#bccbb8}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -90,7 +103,7 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
 <header class="topbar">
  <button class="mobile-menu icon-button" id="menuToggle" aria-label="Цэргийн самбар"><svg><use href="#i-menu"/></svg></button>
  <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 30 40"><path d="M15 3v33M5 10h20M9 16v12l6 6 6-6V16M10 5l5-3 5 3M11 22h8"/></svg></span><div>МОНГОЛ БААТРУУД<small>Т А Л Ы Н &nbsp; Э З Э Д</small></div></div>
- <span class="edition">ТАЛЫН ЭЗЭД <i>4.2</i></span>
+ <span class="edition">ТАЛЫН ЭЗЭД <i>4.3</i></span>
  <div class="resources" aria-live="polite"><div class="mine-counter" title="Эзэлсэн алтны уурхай"><span style="font-size:18px">⛏</span><b id="minesOwned">0 / 5</b><small>УУРХАЙ</small></div>
   <div><svg class="gold"><use href="#i-coin"/></svg><b id="gold">180</b><small id="income">+3/с</small></div>
   <div><svg><use href="#i-horse"/></svg><b id="armyCount">10</b><small>/ 60</small></div>
@@ -100,7 +113,7 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
 </header>
 <section id="launchpad" class="launchpad" aria-label="Монгол баатруудын эхлэх дэлгэц">
  <nav class="launch-nav"><div class="launch-logo"><span>ᠮ</span><div>МОНГОЛ БААТРУУД<small>Т А Л Ы Н &nbsp; Э З Э Д</small></div></div><div><button data-open-rank>♜ Эрэмбэ</button><button data-install>↓ Суулгах</button></div></nav>
- <div class="launch-content"><div class="launch-copy"><div class="season-tag"><i></i> I УЛИРАЛ · ОРХОНЫ ХӨНДИЙ</div><h2>ТАЛ НУТГАА<br><em>ЭЗЭМД.</em></h2><p class="intro">Улсаа хөгжүүл. Цэргээ сургаж, түвшин ахиул.<br>Нэг сүлдийн дор найзуудтайгаа хүчээ сорь.</p>
+ <div class="launch-content"><div class="launch-copy"><div class="season-tag"><i></i> I УЛИРАЛ · ОРХОНЫ ХӨНДИЙ</div><h2>СҮЛДЭЭ ӨРГӨ.<br><em>ТАЛАА НЭГТГЭ.</em></h2><p class="intro">Орхоны хөндийгөөс аянаа эхлүүл. Баатраа удирдаж,<br>баазаа бэхлэн, найзуудтайгаа тал нутгийн төлөө өрсөлд.</p>
   <label class="player-field" for="playerNickname"><span>БААТРЫН ХОЧ</span><input id="playerNickname" maxlength="18" placeholder="Таны хоч" autocomplete="nickname"></label>
   <button id="learnPlay" class="learn-button">? Яаж тоглох вэ?</button>
   <div class="launch-actions"><button id="startShortcut" aria-label="Тоглож эхлэх">▶ ТОГЛОЖ ЭХЛЭХ <span>ГАНЦААРАА · ДАСГАЛ</span></button><button id="rankedStart">♜ ЭРЭМБЭТЭЙ АЯН</button><button id="friendLaunch">⚑ НАЙЗУУДТАЙГАА</button><button id="homeResume" hidden>Хадгалсан аянаа үргэлжлүүлэх →</button></div>
@@ -108,7 +121,7 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
   <div class="skin-choice" role="group" aria-label="Баатрын хуягны өнгө"><span>СҮЛДИЙН ӨНГӨ</span><button data-skin="sky" aria-pressed="true" aria-label="Хөх хуяг"></button><button data-skin="gold" aria-pressed="false" aria-label="Алтан хуяг"></button><button data-skin="ruby" aria-pressed="false" aria-label="Улаан хуяг"></button></div>
  </div><div class="launch-art"><canvas id="menuHero" width="720" height="720" aria-label="Нарийвчилсан хуягтай Монгол морьт баатар"></canvas><div class="hero-caption"><strong>ХӨХ МОНГОЛ</strong><span>ТАЛ НУТГИЙН ШИНЭ АЯН</span></div></div></div>
  <div class="launch-features"><div><i>◆</i><div><b>ӨӨРИЙН БААТАР</b><p>Нарийвчилсан хуяг, морь, зэвсэг.<br>Чиглүүл. Дайр. Хурдал.</p></div></div><div><i>♜</i><div><b>ЭЗЭМШЛЭЭ ХАМГААЛ</b><p>Модон хашаа, чулуун хэрэм.<br>Эзэл. Бэхэл. Зас.</p></div></div><div><i>⚑</i><div><b>ЗЭРЭГЛЭЛЭЭ АХИУЛ</b><p>Шинэ дайчнаас Их хаан хүртэл.<br>Аян бүр шинэ түүх.</p></div></div></div>
- <footer class="launch-footer"><span>4.2 · УЛС, ЦЭРГИЙН ХӨГЖИЛ</span><span>iPHONE · ANDROID · PC</span></footer>
+ <footer class="launch-footer"><span>4.3 · СҮЛДИЙН АЯН</span><span>iPHONE · ANDROID · PC</span></footer>
 </section>
 <div class="workspace">
  <aside class="sidebar" id="sidebar">
@@ -122,7 +135,7 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
   <section class="start-panel" id="startPanel">
    <div class="mode-tabs" role="tablist" aria-label="Тоглох горим"><button id="soloTab" role="tab" aria-selected="true">Ганцаараа</button><button id="onlineTab" role="tab" aria-selected="false">Найзуудтайгаа</button></div>
    <div id="soloMenu"><div class="difficulty"><span>БОТЫН ТҮВШИН</span><div role="group" aria-label="Ботын түвшин"><button class="diff" data-diff="easy" aria-pressed="false">Хялбар</button><button class="diff" data-diff="normal" aria-pressed="true">Дундаж</button><button class="diff" data-diff="hard" aria-pressed="false">Хэцүү</button></div></div><p class="small-note">3 өрсөлдөгч овогтой тулалдана.<br>13 баазаас 8-ыг эзэлж тал нутгаа нэгтгэ.</p><button class="primary" id="start">Аянд мордох <span>↗</span></button><button class="text-button" id="resume" hidden>Хадгалсан тоглолтоо үргэлжлүүлэх →</button></div>
-   <div id="onlineMenu" hidden><label for="nickname">Баатрын хоч</label><input id="nickname" maxlength="18" placeholder="Баттулга" autocomplete="nickname"><button class="primary" id="createRoom">Өрөө нээх <span>↗</span></button><div class="join-row"><input id="roomCodeInput" maxlength="6" placeholder="6 оронтой код" inputmode="numeric" aria-label="Өрөөний код"><button id="joinRoom" class="secondary">Нэгдэх</button></div><p class="small-note">2–4 хүн. Сул овгийг бот удирдана.</p></div>
+   <div id="onlineMenu" hidden><label for="nickname">Баатрын хоч</label><input id="nickname" maxlength="18" placeholder="Баттулга" autocomplete="nickname"><button class="primary" id="createRoom">Өрөө нээх <span>↗</span></button><div class="join-row"><input id="roomCodeInput" maxlength="6" placeholder="6 оронтой код" inputmode="numeric" aria-label="Өрөөний код"><button id="joinRoom" class="secondary">Нэгдэх</button></div><p class="small-note">Интернэтээр 2–4 хүн, тус бүр өөр төхөөрөмжөөс тоглоно. Нэг өрөөний кодоор нэгдэнэ. Хүнгүй овгийг бот удирдана.</p></div>
    <div id="lobby" hidden><span class="eyebrow">ӨРӨӨНИЙ КОД</span><div class="room-code" id="roomCode">—</div><div id="lobbyPlayers"></div><button class="secondary full" id="copyInvite">Урилга хуулах</button><button class="primary" id="launchOnline">Тоглолт эхлүүлэх →</button><button class="text-button" id="leaveLobby">Өрөөнөөс гарах</button></div>
    <p id="connectionStatus" role="status" class="connection-status"></p>
   </section>
@@ -140,8 +153,14 @@ html,body{background:#0b2029}button{touch-action:manipulation}.edition i{font-we
    <button class="special" data-skill="volley"><span>🏹</span><span><b>Суман бороо</b><small>Газрын зураг дээр бай сонгоно</small></span><strong data-skill-time="volley">110 алт</strong></button>
    <div class="mission" id="mission"><span class="eyebrow">АЯНЫ ДААЛГАВАР</span><p id="missionText">2 бааз эзэл · +70 алт</p><div class="objective-track"><i id="missionFill"></i></div></div>
   </section>
-  <section class="mining-guide"><b>⛏ АЛТНЫ УУРХАЙ</b><p>Таван уурхай дээр цэргүүдээ хүргэ. 4 секунд эзэмшээд <strong>+55 алт</strong>, дараа нь <strong>+4 алт/секунд</strong> авна.</p></section><section class="standings"><div class="section-title"><span>ТАЛ НУТГИЙН ХҮЧНИЙ ХАРЬЦАА</span><span>БААЗ</span></div><div id="standings"></div></section>
-  <div class="sidebar-bottom"><div class="tiny-ornament">◇ ─── ◇ ─── ◇</div><span>МОНГОЛ БААТРУУД 4.2</span><button id="newGame" class="text-button" hidden>Шинэ тоглолт</button><p>Монгол ахуйгаас сэдэвлэсэн тоглоом</p></div>
+  <section class="mining-guide"><b>⛏ АЛТНЫ УУРХАЙ</b><p>Таван уурхай дээр цэргүүдээ хүргэ. 4 секунд эзэмшээд <strong>+55 алт</strong>, дараа нь <strong>+4 алт/секунд</strong> авна.</p></section><details class="campaign-journal" id="campaignJournal"><summary>📜 Аяны тэмдэглэл · Дүрслэл</summary>
+  <p>Бааз, уурхай, сургалтын мэдээ энд үлдэнэ. Хамгийн сүүлийн 8 үйл явдлыг харуулна.</p>
+  <div class="visual-options" role="group" aria-label="Дүрслэлийн тохиргоо"><button id="detailGraphics" aria-pressed="true">Нарийвчилсан</button><button id="simpleGraphics" aria-pressed="false">Хөнгөн</button><button id="storyVoice" aria-pressed="true">Уран өгүүлэмж</button></div>
+  <p id="graphicsDescription">Нарийвчилсан: баатрын гэрэлт цагираг, чиглэл, амин хүч харагдана.</p>
+  <div class="map-legend">◆ Таны баатар · Цагаан цагираг: амин хүч<br>Шар: эзэлж буй бааз · ⛏: алтны уурхай</div>
+  <ol id="campaignLog" class="campaign-log" aria-label="Аяны сүүлийн мэдээ"><li>Аян эхэлмэгц тэмдэглэл хөтөлнө.</li></ol>
+  </details><section class="standings"><div class="section-title"><span>ТАЛ НУТГИЙН ХҮЧНИЙ ХАРЬЦАА</span><span>БААЗ</span></div><div id="standings"></div></section>
+  <div class="sidebar-bottom"><div class="tiny-ornament">◇ ─── ◇ ─── ◇</div><span>МОНГОЛ БААТРУУД 4.3</span><button id="newGame" class="text-button" hidden>Шинэ тоглолт</button><p>Монгол ахуйгаас сэдэвлэсэн тоглоом</p></div>
  </aside>
  <button id="sidebarScrim" class="sidebar-scrim" aria-label="Цэргийн самбар хаах" hidden></button>
  <main class="battlefield" id="battlefield">
@@ -756,15 +775,15 @@ class Renderer{
  render(s,selected,mine,dt,now){
   const c=this.ctx,cam=this.camera,v=this.view;c.setTransform(this.dpr,0,0,this.dpr,0,0);c.imageSmoothingEnabled=false;c.fillStyle='#566e43';c.fillRect(0,0,v.w,v.h);c.save();c.translate(v.w/2,v.h/2);c.scale(cam.z,cam.z);c.translate(-cam.x,-cam.y);c.drawImage(this.terrain,0,0);
   // Warm light and translucent moving cloud shadows create depth without extra downloads.
-  c.save();c.globalAlpha=.055;
-  const drift=(s.time*3)%2600;
+  c.save();c.globalAlpha=this.detail===false?0:.055;
+  const drift=this.reducedMotion?0:(s.time*3)%2600;
   for(let k=0;k<5;k++){const xx=(k*455+drift)%2600-280,yy=140+k*236;c.fillStyle=k%2?'#173b43':'#f4edbb';c.beginPath();c.ellipse(xx,yy,155,43,-.18,0,Math.PI*2);c.fill()}
   c.restore();this.cacheTerritory(s);c.drawImage(this.territory,0,0);
   if(this.guideTarget){const target=this.guideTarget;c.save();c.strokeStyle='#ffdf82';c.lineWidth=2.5;c.setLineDash([8,5]);c.beginPath();c.ellipse(target.x,target.y,117,86,0,0,Math.PI*2);c.stroke();c.setLineDash([]);c.font='bold 12px Arial';c.textAlign='center';const label=target.label,tw=c.measureText(label).width;c.fillStyle='#17313bea';c.fillRect(target.x-tw/2-11,target.y-107,tw+22,23);c.fillStyle='#ffe3a0';c.fillText(label,target.x,target.y-91);c.restore()}
   const chosen=s.units.filter(u=>selected.has(u.id)&&u.owner===mine);
   this.unitHP??=new Map();const currentHP=new Map();
-  for(const unit of s.units){const prev=this.unitHP.get(unit.id);if(prev&&prev.hp>unit.hp+.1)this.effects.push({type:'hit',x:unit.x,y:unit.y-34,t:.7,owner:unit.owner,damage:Math.round(prev.hp-unit.hp)});currentHP.set(unit.id,{hp:unit.hp,x:unit.x,y:unit.y,owner:unit.owner})}
-  for(const [id,u]of this.unitHP)if(!currentHP.has(id)&&s.phase==='playing')this.effects.push({type:'fall',x:u.x,y:u.y-10,t:.8,owner:u.owner});this.unitHP=currentHP;
+  for(const unit of s.units){const prev=this.unitHP.get(unit.id);if(prev&&prev.hp>unit.hp+.1)this.detail!==false&&this.effects.push({type:'hit',x:unit.x,y:unit.y-34,t:.7,owner:unit.owner,damage:Math.round(prev.hp-unit.hp)});currentHP.set(unit.id,{hp:unit.hp,x:unit.x,y:unit.y,owner:unit.owner})}
+  for(const [id,u]of this.unitHP)if(!currentHP.has(id)&&s.phase==='playing')this.detail!==false&&this.effects.push({type:'fall',x:u.x,y:u.y-10,t:.8,owner:u.owner});this.unitHP=currentHP;
   if(this.effects.length>100)this.effects=this.effects.slice(-100);
   // A dotted path and target reticle make movement commands visible.
   if(chosen.length){const lead=chosen[0];if(lead.moving&&Math.hypot(lead.tx-lead.x,lead.ty-lead.y)>45){c.strokeStyle='#f6e4a16a';c.lineWidth=1.5;c.setLineDash([3,10]);c.beginPath();c.moveTo(lead.x,lead.y);c.lineTo(lead.tx,lead.ty);c.stroke();c.setLineDash([]);c.strokeStyle='#f6e4a1';c.beginPath();c.arc(lead.tx,lead.ty,10,0,7);c.stroke();c.fillStyle='#f6e4a1';c.fillRect(lead.tx-2,lead.ty-2,4,4)}}
@@ -801,12 +820,22 @@ class Renderer{
     const u=item.v,select=selected.has(u.id)&&u.owner===mine;const visible=u.x>cam.x-v.w/cam.z/2-50&&u.x<cam.x+v.w/cam.z/2+50&&u.y>cam.y-v.h/cam.z/2-60&&u.y<cam.y+v.h/cam.z/2+60;if(!visible)continue;
     ellipse(c,u.x+2,u.y+1,u.type==='guard'?7:13,u.type==='guard'?3:5,'#283d2c60');
     if(select){c.strokeStyle='#c6f1b3';c.lineWidth=1.4;c.beginPath();c.ellipse(u.x,u.y,15,6,0,0,7);c.stroke();c.fillStyle='#87c58b24';c.fill()}
+    // A distinct silhouette, readable health arc, and direction make the hero easy to find.
+    if(u.type==='hero'&&u.owner===mine){
+     c.save();c.strokeStyle='#fff0ba';c.lineWidth=2.2;c.beginPath();c.ellipse(u.x,u.y+1,23,11,0,0,Math.PI*2);c.stroke();
+     if(this.detail!==false){
+      const glow=c.createRadialGradient(u.x,u.y,3,u.x,u.y,34);glow.addColorStop(0,'#ffe4a036');glow.addColorStop(1,'#ffe4a000');c.fillStyle=glow;c.beginPath();c.ellipse(u.x,u.y,34,18,0,0,Math.PI*2);c.fill();
+      c.strokeStyle=u.hp<u.maxHp*.3?'#ffae95':'#e4ffd8';c.lineWidth=3;c.beginPath();c.ellipse(u.x,u.y+1,27,14,0,-Math.PI/2,-Math.PI/2+Math.PI*2*Math.max(0,u.hp/u.maxHp));c.stroke();
+      const control=s.heroControls?.[u.owner],dx=control?.active?control.dx:u.tx-u.x,dy=control?.active?control.dy:u.ty-u.y,length=Math.hypot(dx,dy);
+      if(length>.05){const x=u.x+dx/length*35,y=u.y+dy/length*24;c.translate(x,y);c.rotate(Math.atan2(dy,dx));poly(c,[[7,0],[-4,-4],[-4,4]],'#fff0ba')}
+     }c.restore();
+    }
     const frame=u.moving?Math.floor(u.walk*1.4)%8:0,sp=horse(u.owner,u.type,frame,u.face);c.imageSmoothingEnabled=true;c.drawImage(sp,Math.round(u.x-24),Math.round(u.y-48),48,58);c.imageSmoothingEnabled=false;
     if(u.hp<u.maxHp*.95||select){rect(c,u.x-12,u.y-46,24,3,'#273a31');rect(c,u.x-11,u.y-45,22*u.hp/u.maxHp,1,u.hp<u.maxHp*.3?'#e2a07a':CLANS[u.owner]?.light||'#d9cc9d')}
     if(u.owner>=0&&s.rallyUntil?.[u.owner]>s.time){c.strokeStyle='#f3d38999';c.lineWidth=2;c.beginPath();c.ellipse(u.x,u.y,19,9,0,0,7);c.stroke()}
-    if(u.owner>=0&&(u.type==='hero'||u.level>1)){c.fillStyle=u.level>=4?'#ffe4a0':CLANS[u.owner].light;c.font='bold 9px Arial';c.textAlign='center';c.fillText((u.type==='hero'?'◆ ':'')+'Lv.'+(u.level||1),u.x,u.y-51)}
+    if(u.owner>=0&&(u.type==='hero'||u.level>1)){c.fillStyle=u.level>=4?'#ffe4a0':CLANS[u.owner].light;c.font='bold 9px Arial';c.textAlign='center';c.fillText((u.type==='hero'?'◆ ':'')+'Түв. '+(u.level||1),u.x,u.y-51)}
     if(u.type==='hero'&&s.heroControls?.[u.owner]?.active){c.strokeStyle=s.heroControls[u.owner].dashUntil>s.time?'#fff4b0':'#e3c57d';c.lineWidth=2;c.beginPath();c.ellipse(u.x,u.y,21,10,0,0,Math.PI*2);c.stroke()}
-    if(u.moving&&Math.sin(now*.01+u.id)>.9){rect(c,u.x-9-u.face*7,u.y+3,3,1,'#d5c28c55')}
+    if(this.detail!==false&&!this.reducedMotion&&u.moving&&Math.sin(now*.01+u.id)>.9){rect(c,u.x-9-u.face*7,u.y+3,3,1,'#d5c28c55')}
    }
   }
   for(const f of s.barrages||[]){const k=1-f.t/1.3;c.save();c.globalAlpha=Math.max(0,f.t/1.3)*.8;c.strokeStyle='#ffe6ad';c.lineWidth=2+k*2;c.beginPath();c.arc(f.x,f.y,30+k*66,0,Math.PI*2);c.stroke();c.fillStyle='#e9a96544';c.beginPath();c.arc(f.x,f.y,92*(1-k*.1),0,Math.PI*2);c.fill();c.restore()}
@@ -826,8 +855,51 @@ globalThis.SteppeArt={Renderer,horse,ger};
 </script><script>
 'use strict';
 (() => {
+ const phrases={
+  capture:['Сүлд шинэ бууринд мандлаа.','Тал нутгийн нэгэн буурь танай мэдэлд орлоо.','Аяны замд шинэ түшиц нэмэгдлээ.'],
+  mine:['Газрын хишиг улсын санд хурлаа.','Уурхайн гал сэргэж, алтан урсгал эхэллээ.','Дархчуудын ажилд шинэ нөөц нэмэгдлээ.'],
+  recruit:['Сүлдийн дор шинэ дайчид цуглалаа.','Аяны цуваанд нэмэлт хүч ирлээ.','Морин төвөргөөн ойртлоо.'],
+  training:['Дадлага ур чадварыг тэтгэнэ.','Дайчдын эрдэм нэгэн шат ахилаа.','Тулааны бэлтгэл үр дүнгээ өглөө.'],
+  nationLevel:['Улсын сүр хүч зузаарлаа.','Их аяны нэр хүнд түглээ.','Сүлдийн дор бүтээсэн үйлс арвижлаа.'],
+  unitLevel:['Баатрын туршлага шинэ эрдэм болов.','Аяны зам баатрыг хатуужууллаа.','Эр зориг ур чадвартай хосоллоо.'],
+  fort:['Бууриа бэхэлбэл аян бат.','Хамгаалалтын түшиц бослоо.','Хэрмийн цаана улс амгалан.'],
+  repair:['Эвдэрснийг сэлбэж, эзэмшлээ бататгалаа.','Хамгаалалтын хүч сэргэв.'],
+  mission:['Аяны зорилго биеллээ.','Хамтын зүтгэл хишгээ өглөө.','Сүлдийн замд нэгэн амжилт нэмэгдлээ.']
+ };
+ function create(){
+  const counters=new Map();
+  return {reset(){counters.clear()},describe(event,poetic=true){
+   const options=phrases[event.kind];if(!poetic||!options)return String(event.text||'');
+   const index=counters.get(event.kind)||0;counters.set(event.kind,index+1);
+   return options[index%options.length]+' '+String(event.text||'');
+  }};
+ }
+ globalThis.SteppeStories={create};
+})();
+</script><script>
+'use strict';
+(() => {
 const E=SteppeEngine,$=id=>document.getElementById(id),map=$('map'),mini=$('minimap');
 const art=new SteppeArt.Renderer(map,mini);
+const story=SteppeStories.create(),campaignEntries=[];
+const PRESENTATION_KEY='mongol-baatruud-presentation-v1';
+let presentation={detail:true,poetic:true};
+try{const saved=JSON.parse(localStorage.getItem(PRESENTATION_KEY));if(saved&&typeof saved.detail==='boolean'&&typeof saved.poetic==='boolean')presentation=saved}catch{}
+function applyPresentation(){
+ art.detail=presentation.detail;art.reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ $('detailGraphics').setAttribute('aria-pressed',String(presentation.detail));$('simpleGraphics').setAttribute('aria-pressed',String(!presentation.detail));$('storyVoice').setAttribute('aria-pressed',String(presentation.poetic));
+ $('graphicsDescription').textContent=presentation.detail?'Нарийвчилсан: баатрын гэрэлт цагираг, чиглэл, амин хүч харагдана.':'Хөнгөн: нэмэлт гэрэлтүүлэг, гэмтлийн тоо, тоосыг багасгана. Баатрын таних цагираг хэвээр.';
+ try{localStorage.setItem(PRESENTATION_KEY,JSON.stringify(presentation))}catch{}
+}
+function resetChronicle(){campaignEntries.length=0;story.reset();$('campaignLog').replaceChildren();const row=document.createElement('li');row.textContent='Аян эхэллээ. Баатраа удирдаж, эхний бааздаа хүрээрэй.';$('campaignLog').appendChild(row)}
+function recordCampaign(event){
+ const message=story.describe(event,presentation.poetic),seconds=Math.floor(state.time),stamp=Math.floor(seconds/60).toString().padStart(2,'0')+':'+(seconds%60).toString().padStart(2,'0');
+ campaignEntries.unshift({message,stamp});campaignEntries.length=Math.min(8,campaignEntries.length);
+ $('campaignLog').replaceChildren();for(const entry of campaignEntries){const row=document.createElement('li'),time=document.createElement('time'),text=document.createElement('span');time.textContent=entry.stamp;text.textContent=entry.message;row.append(time,text);$('campaignLog').appendChild(row)}
+ return message;
+}
+$('detailGraphics').onclick=()=>{presentation.detail=true;applyPresentation()};$('simpleGraphics').onclick=()=>{presentation.detail=false;applyPresentation()};$('storyVoice').onclick=()=>{presentation.poetic=!presentation.poetic;applyPresentation()};applyPresentation();
+
 let state=E.create(),mine=0,role=null,started=false,paused=false,selected=new Set(),spawn=0,lastFrame=performance.now(),uiAt=0,netAt=0,saveAt=0,lastEvent=0,toastTimer,resultShown=false,soundOn=false,audio=null;
 let relay=null,code='',sid='',members=new Map(),connectTimer=null,hostSeen=0,pingAt=0,networkSeq=0,receivedSeq=-1,networkBusy=false;
 let held=new Set(),pointers=new Map(),drag=null,pinch=null,suppressTap=false,helpWasPaused=false;
@@ -917,6 +989,8 @@ function setSkin(skin){
  profile.skin=colors[skin]?skin:'sky';globalThis.SteppeSkin=colors[profile.skin];persistProfile();
  for(const b of document.querySelectorAll('[data-skin]'))b.setAttribute('aria-pressed',String(b.dataset.skin===profile.skin));
  const canvas=$('menuHero'),c=canvas.getContext('2d');c.clearRect(0,0,canvas.width,canvas.height);c.imageSmoothingEnabled=true;
+ c.save();c.strokeStyle='#d5b87940';c.lineWidth=2;c.beginPath();c.arc(360,335,250,0,Math.PI*2);c.stroke();c.strokeStyle='#d5b87918';c.beginPath();c.arc(360,335,270,0,Math.PI*2);c.stroke();
+ for(let n=0;n<16;n++){const a=n*Math.PI/8,x=360+Math.cos(a)*260,y=335+Math.sin(a)*260;c.save();c.translate(x,y);c.rotate(a+Math.PI/4);c.fillStyle=n%4?'#d5b87955':'#edd397';c.fillRect(-3,-3,6,6);c.restore()}c.restore();
  c.fillStyle='#00000022';c.beginPath();c.ellipse(360,630,205,40,0,0,Math.PI*2);c.fill();c.drawImage(SteppeArt.horse(0,'hero',0,1),125,55,480,576);
  if(started)art.portrait(mine);
 }
@@ -1054,6 +1128,7 @@ function updateDevelopmentUI(){
 }
 function dismissTutorial(){$('tutorial').hidden=true}
 function enterGame(){
+ resetChronicle();art.lastEvent=state.seq||0;
  $('startShortcut').hidden=true;$('launchpad').hidden=true;art.effects=[];art.unitHP=new Map();coach={active:false,stage:0,target:-1};recommendedCamp=-1;routeFollow=false;
  E.initExtras(state);started=true;paused=false;resultShown=false;lastEvent=state.seq||0;issue({type:'flag',flag:myFlag,name:myFlag.name});
  $('quickbar').hidden=false;$('speed').hidden=role!=='solo';$('speed').disabled=!!rankSession;cancelTarget();
@@ -1073,6 +1148,7 @@ function startSolo(restore=false){
 }
 function saveSolo(){if(role!=='solo'||!started||resultShown||state.phase!=='playing')return;try{localStorage.setItem(SAVE,JSON.stringify({...E.snapshot(state),playSpeed,rankSession,replay,simFrame,runId}))}catch{}}
 function resetReady(){
+ resetChronicle();
  $('startShortcut').hidden=false;$('launchpad').hidden=false;$('fortTools').hidden=true;coach={active:false,stage:0,target:-1};recommendedCamp=-1;routeFollow=false;art.guideTarget=null;$('coachCard').hidden=true;$('battlefield').classList.remove('guiding');
  SteppeAudio.setMusic(false);if($('music')){$('music').setAttribute('aria-pressed','false');$('music').textContent='♫ АЯ'}
  saveSolo();stopNetwork();rankSession=null;replay=[];simFrame=0;simAccumulator=0;role=null;mine=0;started=false;paused=false;playSpeed=1;state=E.create();cancelTarget();$('quickbar').hidden=true;selected.clear();spawn=0;lastEvent=0;resultShown=false;
@@ -1129,7 +1205,11 @@ function updateUI(){
  $('zoomValue').textContent=Math.round(art.camera.z*100)+'%';
  document.querySelector('.map-subtitle').textContent=!started?'Их аян эхлэхэд бэлэн.':state.phase==='ended'?'Аяны түүх талд үлдэнэ.':paused?'Тоглолт түр зогссон.':'Сүлдээ дагаж, талаа нэгтгэ.';
  const clan=E.CLANS[mine];document.querySelector('.clan-title h1').textContent=state.names?.[mine]||clan.name;document.querySelector('.clan-symbol').style.color=clan.color;
- for(const ev of state.events){if(ev.id<=lastEvent)continue;lastEvent=ev.id;if(ev.kind==='capture'){$('eventText').textContent=ev.text;if(ev.owner===mine){toast('«'+state.camps.find(c=>c.x===ev.x&&c.y===ev.y)?.name+'» баазыг эзэллээ! +40 алт');note(587)}}else if(ev.owner===mine&&ev.kind==='mine'){toast('⛏ '+ev.text);if(soundOn)SteppeAudio.fx('mine')}else if(ev.owner===mine&&ev.kind==='mission'){toast('🏆 '+ev.text);note(880)}else if(ev.owner===mine&&['recruit','training','nationLevel','unitLevel'].includes(ev.kind)){toast(ev.text)}}
+ for(const ev of state.events){
+  if(ev.id<=lastEvent)continue;lastEvent=ev.id;
+  if(ev.owner===mine){const message=recordCampaign(ev);$('eventText').textContent=message;toast(message);if(ev.kind==='mine'&&soundOn)SteppeAudio.fx('mine');if(ev.kind==='capture')note(587);if(ev.kind==='mission')note(880)}
+  else if(ev.kind==='capture')$('eventText').textContent=ev.text;
+ }
  if(started&&state.phase==='playing'&&!counts[mine]&&!us.length){$('eventText').textContent='Танай овог бүх бааз, цэргээ алдлаа.';if(!resultShown)showResult(false)}
  if(started&&state.phase==='ended'&&!resultShown)showResult(state.winner===mine);
  renderStandings();

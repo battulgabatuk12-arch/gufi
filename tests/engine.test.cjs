@@ -23,8 +23,8 @@ function advance(s, seconds, input) {
     E.tick(s, 1 / 60);
   }
 }
-test('all six embedded scripts parse without syntax errors', () => {
-  assert.equal(scripts.length, 6);
+test('all seven embedded scripts parse without syntax errors', () => {
+  assert.equal(scripts.length, 7);
   for (const script of scripts) new vm.Script(script);
 });
 test('hero moves in each of the four requested directions', () => {
